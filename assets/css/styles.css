@@ -296,7 +296,7 @@ video {
    right: 0%;
    bottom: auto;
    height: 100%;
-   background-image: url(/https://vepimg.b8cdn.com/uploads/vjfnew/3631/uploads/vjf/content/misc/162696889360be63e5d607b01c5be1c64b_top-bar.svg);
+   background-image: url(assets/images/top-bar.svg);
    background-position: 50% 0%;
    background-size: contain;
    background-repeat: no-repeat;
@@ -309,7 +309,7 @@ video {
    right: 0%;
    bottom: 0%;
    height: 100%;
-   background-image: url(https://vepimg.b8cdn.com/uploads/vjfnew/3631/uploads/vjf/content/misc/162696892960be6419bb133b94b2dd88ee_blue-curve-bottom.svg);
+   background-image: url(assets/images/blue-curve-bottom.svg);
    background-position: 50% 100%;
    background-size: contain;
    background-repeat: no-repeat;
@@ -364,7 +364,7 @@ a:hover {
    display: block;
    width: 50px;
    height: 50px;
-   background-image: url('/https://vepimg.b8cdn.com/uploads/vjfnew/3631/uploads/vjf/content/misc/1626969184cv-icon.svg');
+   background-image: url('assets/images/cv-icon.svg');
    background-position: 0px 0px;
    background-size: cover;
    margin-right: 15px;
@@ -559,7 +559,7 @@ a:hover {
    -webkit-align-items: center;
    -ms-flex-align: center;
    align-items: center;
-   background-image: url('/https://vepimg.b8cdn.com/uploads/vjfnew/3631/uploads/vjf/content/misc/162696931460b93b004f128b964fc0692e_Header-Background-noimage-TREVOR-011.jpg');
+   background-image: url('assets/images/Header-Background-noimage-TREVOR-011.jpg');
    background-position: 50% 33%;
    background-size: cover;
    background-repeat: no-repeat;
@@ -573,7 +573,7 @@ a:hover {
    -ms-flex-direction: row;
    flex-direction: row;
    background-color: #4475b8;
-   background-image: url('/https://vepimg.b8cdn.com/uploads/vjfnew/3631/uploads/vjf/content/misc/162696899860b93b004f128b964fc0692e_Header-Background-noimage-TREVOR-01.jpg');
+   background-image: url('assets/images/Header-Background-noimage-TREVOR-01.jpg');
    background-position: 50% 0%;
 }
 .text-span-9 {
@@ -894,7 +894,7 @@ a:hover {
    width: 40%;
    border-top-left-radius: 3px;
    border-bottom-left-radius: 3px;
-   background-image: url('/https://vepcss.b8cdn.com/images/bike-img.jpg');
+
    background-position: 0px 0px;
    background-size: cover;
    background-repeat: no-repeat;
@@ -910,7 +910,7 @@ a:hover {
    text-align: left;
 }
 .img-div._1.dwayne {
-   background-image: url('/https://vepimg.b8cdn.com/uploads/vjfnew/3631/uploads/vjf/content/misc/162696945260b93af4973f10d1c4066549_dwane-mcferrin.jpg');
+
    background-position: 50% 50%;
    background-size: contain;
 }
@@ -919,7 +919,7 @@ a:hover {
    margin-left: auto;
    border: 1px none #000;
    border-radius: 0px;
-   background-image: url('/https://vepcss.b8cdn.com/images/shuttle.svg');
+
    background-position: 0px 0px;
    background-size: contain;
    background-repeat: no-repeat;
@@ -931,12 +931,12 @@ a:hover {
    margin-bottom: 25px;
    margin-left: auto;
    border-radius: 200px;
-   background-image: url('/https://vepcss.b8cdn.com/images/10.svg');
+
    background-position: 50% 50%;
    background-size: cover;
 }
 .img-div._3.humana {
-   background-image: url('/https://vepimg.b8cdn.com/uploads/vjfnew/3631/uploads/vjf/content/misc/162696949860b93af4973f10423e066547_humana.png');
+   background-image: url('assets/images/humana.png');
 }
 .testimonial-div-box {
    position: relative;
@@ -967,7 +967,7 @@ a:hover {
 .event-sponsors {
    padding-top: 120px;
    padding-bottom: 120px;
-   background-image: linear-gradient(135deg, rgba(38, 52, 110), rgba(51, 91, 149)), url('/https://uploads-ssl.webflow.com/60b93ab81026ad43b4%C3%A2%E2%82%AC%C2%A664fc0692e_Header-Background-noimage-TREVOR-01.jpg') !important;
+   background-image: linear-gradient(135deg, rgba(38, 52, 110), rgba(51, 91, 149));
    background-position: 0px 0px, 50% 50%;
    background-size: cover, cover;
    background-repeat: repeat, no-repeat;
@@ -1386,6 +1386,7 @@ a:hover {
 @media screen and (max-width: 479px) {
    .div-block-986 {
       min-width: 40%;
+
    }
    .image-218 {
       display: none;
