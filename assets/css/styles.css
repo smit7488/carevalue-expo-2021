@@ -110,7 +110,7 @@ h1 {
 .faq h1 {
    font-size: 36px;
    color: #000;
-   font-family: 'OpenSansLight';
+   font-family: 'Lato', sans-serif;
 }
 h1 {
    text-transform: none;
@@ -1731,8 +1731,4 @@ a:hover {
       -ms-grid-column-span: 1;
       grid-column-end: span 1;
    }
-}
-@font-face {
-   font-family: 'OpenSansLight';
-   src: url('https://vepcss.b8cdn.com/fonts/OpenSansLight.woff2') format('woff2'), url('https://vepcss.b8cdn.com/fonts/OpenSansLight.woff') format('woff'), url('https://vepcss.b8cdn.com/fonts/OpenSansLight.ttf') format('truetype'), url('https://vepcss.b8cdn.com/fonts/OpenSansLight.svg#OpenSansLight') format('svg');
 }
