@@ -1,0 +1,1777 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>CareValue Health &amp; Wealth Expo 2021</title>
+<link rel="stylesheet" type="text/css" href="/assets/css/styles.css">
+</head>
+
+<body class="curr-lang-en homepage-body">
+
+<!-- Video Player Box Start -->
+<div class="modal fade" id="VideoPlayerModal" tabindex="-1" role="dialog" aria-labelledby="EventModalTitle" aria-hidden="true">
+   <div class="modal-dialog">
+      <div class="modal-content">
+         <div class="modal-header">
+            <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+            <h4 class="modal-title" id="EventModalTitle">CareValue Health &amp; Wealth Expo 2021</h4>
+         </div>
+         <div class="modal-body" style="height: 350px;" id="VideoPlayerModal-Content"> </div>
+      </div>
+   </div>
+</div>
+<!-- Video Player Box End --> 
+<!-- Login Modal -->
+<div class="modal fade" id="LoginModal" tabindex="-1" role="dialog" aria-labelledby="LoginModalTitle" aria-hidden="true">
+   <div class="modal-dialog">
+      <div class="modal-content">
+         <div class="modal-header">
+            <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+            <h4 class="modal-title" id="LoginModalTitle">Login</h4>
+         </div>
+         <form action="/https://carevalueexpo.vfairs.com/en/login" method="post" accept-charset="utf-8" id="Main-Login-Frm" autocomplete="off" enctype="multipart/form-data">
+            <div style="display:none">
+               <input type="hidden" name="login-red" value=""/>
+               <input type="hidden" name="Login-frm" value="Login-frm"/>
+               <input type="hidden" name="ci_csrf_token" value=""/>
+            </div>
+            <div class="modal-body">
+               <div class="form-group group-email">
+                  <label for="LoginEmail" class="control-label">Email:</label>
+                  <input type="text" id="LoginEmail" name="LoginEmail" class="form-control" placeholder="" value=""/>
+               </div>
+               <div class="form-group grp-password-field">
+                  <label for="Password" class="control-label">Password:</label>
+                  <input type="password" id="Password" name="Password" class="form-control" placeholder="" autocomplete="off"/>
+               </div>
+               <div class="form-group"> 
+                  <!--label for="message-text" class="control-label">&nbsp</label-->
+                  <div id="ResponseBox" class="ResponseBox"></div>
+               </div>
+            </div>
+            <div class="modal-footer" id="login-footer">
+               <div class="row">
+                  <div class="col-sm-4">
+                     <button type="button" class="btn btn-default" data-dismiss="modal">Cancel</button>
+                     <button type="submit" class="btn btn-darkgrey">Login</button>
+                  </div>
+                  <div class="col-sm-8"> <a href="https://carevalueexpo.vfairs.com/en/registration" class="btn-modal-registration btn btn-darkgrey flt-left" style="border-radius:0">New user? Register now</a>
+                     <button type="button" class="btn btn-darkgrey flt-left forgot-btn" data-toggle="modal" data-target="#forgot-pwd-modal">Forgot Password?</button>
+                  </div>
+               </div>
+            </div>
+         </form>
+      </div>
+   </div>
+</div>
+<!-- Login popup end--> 
+
+<!-- Forgot Password Update Popup Start -->
+<div class="modal fade" id="set-new-pwd-modal" tabindex="-1" role="dialog" aria-labelledby="setPasswordModalTitle" aria-hidden="true">
+   <div class="modal-dialog">
+      <div class="modal-content">
+         <div class="modal-header">
+            <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+            <h4 class="modal-title" id="setPasswordModalTitle">Reset Password</h4>
+         </div>
+         <form id="reset-update-pwd-frm" method="post">
+            <input type="hidden" id="pwd-reset-update-token" name="token" value="0">
+            <div class="modal-body">
+               <div class="form-group">
+                  <label for="updatepwdemail" class="control-label">Email / Username:</label>
+                  <input type="text" name="updatepwdemail" id="updatepwdemail" class="form-control" placeholder="Enter Your Email Address">
+               </div>
+               <div class="form-group">
+                  <label for="updatepwdnewpwd" class="control-label">New password:</label>
+                  <input type="password" name="updatepwdnewpwd" id="updatepwdnewpwd" class="form-control" placeholder="New password" autocomplete="off"/>
+               </div>
+               <div class="form-group">
+                  <label for="updatepwdconfirm" class="control-label">Confirm password:</label>
+                  <input type="password" name="updatepwdconfirm" id="updatepwdconfirm" class="form-control" placeholder="Confirm password" autocomplete="off"/>
+               </div>
+               <div class="form-group">
+                  <div id="reset-pwd-responseBox"></div>
+               </div>
+            </div>
+            <div class="modal-footer">
+               <button type="button" class="btn btn-default" data-dismiss="modal">Cancel</button>
+               <button type="submit" class="btn btn-darkgrey">Update</button>
+            </div>
+         </form>
+      </div>
+   </div>
+</div>
+<!-- Forgot Password Update Popup End --> 
+<!-- Forgot Password Popup Start -->
+<div class="modal fade" id="forgot-pwd-modal" tabindex="-1" role="dialog" aria-labelledby="ResetPasswordModalTitle" aria-hidden="true">
+   <div class="modal-dialog">
+      <div class="modal-content">
+         <div class="modal-header">
+            <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+            <h4 class="modal-title" id="ResetPasswordModalTitle">Reset Password</h4>
+         </div>
+         <form id="reset-pwd-frm" method="post">
+            <div class="modal-body">
+               <div class="form-group">
+                  <label for="resetemail" class="control-label">Email / Username:</label>
+                  <input type="text" name="resetemail" id="resetemail" class="form-control" placeholder="Enter Your Email Address">
+               </div>
+               <div class="form-group">
+                  <div id="forgot-pwd-responseBox"></div>
+               </div>
+            </div>
+            <div class="modal-footer">
+               <button type="button" class="btn btn-default" data-dismiss="modal">Cancel</button>
+               <button type="submit" class="btn btn-darkgrey">Reset</button>
+            </div>
+         </form>
+      </div>
+   </div>
+</div>
+<!-- Forgot Password Popup End --> 
+<!-- Message for fair not live and invalid login -->
+<div id="MessageResponseWindow" class="modal fade bs-example-modal-md" aria-labelledby="EventNotLiveModalTitle" tabindex="-1" role="dialog">
+   <div class="modal-dialog modal-md">
+      <div class="modal-content">
+         <div class="modal-header">
+            <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+            <h4 class="modal-title" id="EventNotLiveModalTitle">CareValue Health &amp; Wealth Expo 2021</h4>
+         </div>
+         <div class="ResponseBoxTxt" id="ResponseBoxTxt"> </div>
+      </div>
+   </div>
+</div>
+<div class="header-content" role="heading">
+   <div class="container">
+      <div class="row padding">
+         <div class="col-lg-3 logo-left-en"> <a href="https://carevalueexpo.vfairs.com/en/"><img src="https://vepimg.b8cdn.com/uploads/vjfnew/3631/content/images/162503511860b93ae74f7513f1dd5837a4-expo-logo-01-svg1625035118.svg"/></a>
+            <div class="jad-logo-mob"> <a href="https://carevalueexpo.vfairs.com/en/">&nbsp;</a> </div>
+         </div>
+         <div class="col-lg-9 top-right-section">
+            <nav class="navbar navbar-default" role="navigation">
+               <div class="container-fluid">
+                  <div class="mob-clearfix clearfix"></div>
+                  <div class="navbar-header">
+                     <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1"> <span class="sr-only">Toggle navigation</span> <span class="icon-bar"></span> <span class="icon-bar"></span> <span class="icon-bar"></span> </button>
+                  </div>
+                  <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+                     <ul class="nav navbar-nav">
+                        <li class="active"><a href="/https://carevalueexpo.vfairs.com/en">Home</a></li>
+                        <li><a href="/https://carevalueexpo.vfairs.com/en/lobby">Lobby</a></li>
+                     </ul>
+                     <form class="navbar-form navbar-left" role="search">
+                        <button type="button" id="LoginBtn" data-toggle="modal" data-whatever="@LoginModal" data-target="#LoginModal" class="btn btn-default"><strong>Login</strong></button>
+                     </form>
+                     <ul class="nav navbar-nav navbar-right">
+                     </ul>
+                  </div>
+               </div>
+            </nav>
+         </div>
+         <div class="col-lg-2 jad-logo-web"> <a href="https://carevalueexpo.vfairs.com/en/"><img src="https://vepimg.b8cdn.com/uploads/vjfnew/3631/content/images/162503511860b93ae74f7513f1dd5837a4-expo-logo-01-svg1625035118.svg"/> </a> </div>
+      </div>
+   </div>
+</div>
+<div class="main">
+   <div data-collapse="all" data-animation="default" data-duration="600" data-doc-height="1" role="banner" class="navigation exponav w-nav">
+      <div class="navigation-container">
+         <div class="navigation-left"><a href="#" class="brand-3 w-nav-brand"><img src="https://vepimg.b8cdn.com/uploads/vjfnew/3631/uploads/vjf/content/misc/1626373316logo.svg" width="261" alt="" class="flowbase-logo"/></a><a href="#" class="brand-3 hw-logo w-nav-brand"><img src="https://vepimg.b8cdn.com/uploads/vjfnew/3631/uploads/vjf/content/misc/162672861460b93ae74f7513f1dd5837a4_Expo-Logo-01.svg" alt="" class="flowbase-logo"/></a> <a href="#" class="flowbase-logo"><img src="https://vepimg.b8cdn.com/uploads/vjfnew/3631/uploads/vjf/content/misc/1626728680expo-mobile.svg" alt="" class="brand-3 mobile-logo w-nav-brand"/></a></div>
+         <div class="div-block-986 exponav"><br/>
+            <br/>
+            <br/>
+            <a href="https://carevalueexpo.vfairs.com/en/event-agenda" class="body_button nav-button nav-selection">Agenda</a><a href="https://carevalueexpo.vfairs.com/en/registration" class="body_button nav-button nav-selection">Register</a> <a href="https://carevalueexpo.vfairs.com/login" id="LoginBtn" data-toggle="modal" data-whatever="@LoginModal" data-target="#LoginModal" class="body_button nav-button w-button">Login</a></div>
+      </div>
+   </div>
+   <div class="hero-4 hero-expo">
+      <div class="top-bars"></div>
+      <div class="bottom-bars"></div>
+      <div class="html-embed-16 w-embed">
+         <video width="2000" height="auto" overflow="none" poster="https://vepimg.b8cdn.com/uploads/vjfnew/3631/uploads/vjf/content/misc/1626728778expo-bg-1.png" id="bgvid" playsinline="" autoplay="autoplay" muted="" loop="loop">
+            <source src="https://vepimg.b8cdn.com/uploads/vjfnew/3631/uploads/vjf/content/misc/1626728818bg-video-expo_2.mp4" type="video/mp4"/>
+         </video>
+      </div>
+      <div class="hero-div-holder _60pct">
+         <div class="content-holder home">
+            <h1 class="h1"><strong class="bold-text-7">The Event is Now On-Demand!</strong></h1>
+            <div class="blue_line teal"></div>
+            <p class="subheader"><span class="text-span-9 _50">What a great event this was! A special thanks to the carrier partners &amp; everyone who made this event possible. <strong> Weren't able to join on August 13th? </strong> No worries! The event is on-demand until September 11th. Register and/or login to view exciting content from over 20 industry partners! <br/>
+               <br/>
+               Share on social media: <strong class="bold-text-35">#cvexpo #cvexpo2021</strong></span></p>
+            <div class="div-block-2"><a href="/http://www.linkedin.com/shareArticle?mini=true&amp;url=https%3A%2F%2Fcarevalueexpo.vfairs.com%2F&amp;title=CareValue%20Health%20%26%20Wealth%20Expo%202021&amp;summary=This%20premier%20conference%20is%20designed%20for%20insurance%20professionals%20who%20are%20looking%20to%20grow%20their%20network%2C%20increase%20their%20awareness%20of%20carrier%20plan%20changes%2C%20and%20build%20rapport%20with%20regional%20and%20national%20carriers.%20%20%23cvexpo%20%23cvexpo2021&amp;source=https%3A%2F%2Fcarevalueexpo.vfairs.com%2F" target="_blank" title="Share on LinkedIn" class="w-inline-block" rel="noopener noreferrer"><img src="https://vepimg.b8cdn.com/uploads/vjfnew/3631/uploads/vjf/content/misc/16269662805f875cd1ea574281296dafb4_LinkedIn Icon.png" width="33" alt="" class="image-12"/></a><a href="/https://www.facebook.com/sharer/sharer.php?u=https%3A%2F%2Fcarevalueexpo.vfairs.com%2F&amp;quote=CareValue%20Health%20%26%20Wealth%20Expo%202021" title="Share on Facebook" target="_blank" class="w-inline-block" rel="noopener noreferrer"><img src="https://vepimg.b8cdn.com/uploads/vjfnew/3631/uploads/vjf/content/misc/16269663695f875cd1ea57421c856dafb3_FB Icon.png" width="33" alt="" class="image-11"/></a><a href="/https://twitter.com/intent/tweet?source=https%3A%2F%2Fcarevalueexpo.vfairs.com%2F&amp;text=CareValue%20Health%20%26%20Wealth%20Expo%202021:%20https%3A%2F%2Fcarevalueexpo.vfairs.com%2F" target="_blank" title="Tweet" class="w-inline-block" rel="noopener noreferrer"><img src="https://vepimg.b8cdn.com/uploads/vjfnew/3631/uploads/vjf/content/misc/16269664045f875cd1ea574236ac6dafb6_Twitter Icon.png" width="40" alt="" class="image-34"/></a></div>
+            <a href="https://carevalueexpo.vfairs.com/en/registration" class="body_button w-button whiter">Register NOW</a> <a href="#LoginModal" data-toggle="modal" data-type="btn" class="body_button w-button whiter" style="display: none;">CareValue Agent Login</a></div>
+      </div>
+      <img src="https://vepimg.b8cdn.com/uploads/vjfnew/3631/uploads/vjf/content/misc/162696643660b93ad706ea3bee72b90a6f_HW-Expo-Logo-01.png" loading="lazy" data-w-id="270406e5-f365-575c-8a06-9d964a78462a" alt="" class="image-218"/></div>
+   <p><img src="https://vepimg.b8cdn.com/uploads/vjfnew/3631/uploads/vjf/content/misc/162696647260b93ae1115256d04c646321_dark-bend.svg" alt="" class="image-25 expos"/></p>
+   <div id="gallery" class="expo_section">
+      <div class="section-body-div">
+         <div class="expo_section div">
+            <h1 class="grey_heading" style="text-align: left;"><strong>Event Details</strong></h1>
+            <div class="blue_line teal"></div>
+            <p class="body-paragraphy"><span class="text-span-9 _50 expo">Our annual EXPO is a great way to connect with the CareValue team. You'll hear from our carrier partners as they share 2022 exclusive first looks, and our Keynote Presenter, Dwane McFerrin, on "The Pandemic is Ending, so Now What?" which will cover how the industry and access to healthcare has changed, in addition to highlighting the impacts of pending legislation.&nbsp;</span></p>
+            <ul role="list" class="list-5">
+               <li class="list-item-18"><strong class="blue2">Date:</strong> <em>On-demand until September 11th, 2021</em></li>
+            </ul>
+            <a href="https://carevalueexpo.vfairs.com/en/registration" class="body_button w-button">Register HERE &gt;</a></div>
+         <div class="centered-container w-container">
+            <div class="gallery-grid-container"><a href="#" id="w-node-_4f2c1585-1387-895d-e4f7-71e957ff0e7f-3d75705e" class="gallery-lightbox w-inline-block w-lightbox"><img src="https://vepimg.b8cdn.com/uploads/vjfnew/3631/uploads/vjf/content/misc/162672826760b93aedb90e2963f47df8c9_EXPO-2019-5.jpg" alt="Dwane McFerrin, Chairman - NAHU Medicare Advisory Committee and Brian Doyle, President &amp; CEO - CareValue" title="Dwane McFerrin, Chairman - NAHU Medicare Advisory Committee and Brian Doyle, President &amp; CEO - CareValue" class="gallery-thumbnail" width="800" height="533" caption="false"/> 
+               <script type="application/json" class="w-json">// <![CDATA[
+{
+          "items": [
+            {
+              "width": 800,
+              "caption": "",
+              "height": 533,
+              "fileName": "60817d258510bd545a3d53e5_EXPO-2019-5.jpg",
+              "origFileName": "EXPO-2019-5.jpg",
+              "url": "/https://vepimg.b8cdn.com/uploads/vjfnew/3631/uploads/vjf/content/misc/16269665515f875cd1ea574244ab6db104_EXPO-2019-5.jpg",
+              "_id": "5f3bc7c33c8ce34073cb141a",
+              "type": "image",
+              "fileSize": 60819
+            }
+          ],
+          "group": "gallery"
+        }
+// ]]></script> 
+               </a><a href="#" class="gallery-lightbox w-inline-block w-lightbox"><img src="https://vepimg.b8cdn.com/uploads/vjfnew/3631/uploads/vjf/content/misc/162672830160b93aedb90e29079c7df8cf_EXPO-2019-73.jpg" alt="Amanda Raymond - Chief Business Officer, CareValue" title="Amanda Raymond - Chief Business Officer, CareValue" class="gallery-thumbnail" width="480" height="600" caption="false"/> 
+               <script type="application/json" class="w-json">// <![CDATA[
+{
+          "items": [
+            {
+              "type": "image",
+              "_id": "5f3bc83d361942ac0926ba3a",
+              "fileName": "60817d258510bdd9093d53db_EXPO-2019-73.jpg",
+              "origFileName": "EXPO-2019-73.jpg",
+              "width": 480,
+              "height": 600,
+              "fileSize": 34415,
+              "url": "/https://vepimg.b8cdn.com/uploads/vjfnew/3631/uploads/vjf/content/misc/16269665875f875cd1ea5742d1576db105_EXPO-2019-73.jpg"
+            }
+          ],
+          "group": "gallery"
+        }
+// ]]></script> 
+               </a><a href="#" class="gallery-lightbox w-inline-block w-lightbox"><img src="https://vepimg.b8cdn.com/uploads/vjfnew/3631/uploads/vjf/content/misc/162672836260b93aedb90e298fa57df8c4_EXPO-2019-41.jpg" class="gallery-thumbnail" width="399" height="600" caption="false"/> 
+               <script type="application/json" class="w-json">// <![CDATA[
+{
+          "items": [
+            {
+              "type": "image",
+              "_id": "5f3bc7c3b40b9fba53dbfd47",
+              "fileName": "60817d258510bd0e9d3d53d7_EXPO-2019-41.jpg",
+              "origFileName": "EXPO-2019-41.jpg",
+              "width": 399,
+              "height": 600,
+              "fileSize": 36742,
+              "url": "/https://vepimg.b8cdn.com/uploads/vjfnew/3631/uploads/vjf/content/misc/16269666135f875cd1ea57420bd36db103_EXPO-2019-41.jpg"
+            }
+          ],
+          "group": "gallery"
+        }
+// ]]></script> 
+               </a><a href="#" class="gallery-lightbox w-inline-block w-lightbox"><img src="https://vepimg.b8cdn.com/uploads/vjfnew/3631/uploads/vjf/content/misc/162672832460b93aedb90e29a5647df8cc_EXPO-2019-20.jpg" alt="Brian Doyle with NYS Senator Pam Helming (R)" title="Brian Doyle with NYS Senator Pam Helming (R)" class="gallery-thumbnail" caption="false" width="123" height="82"/> 
+               <script type="application/json" class="w-json">// <![CDATA[
+{
+          "items": [
+            {
+              "width": 800,
+              "caption": "",
+              "height": 533,
+              "fileName": "60817d258510bd7e953d53de_EXPO-2019-20.jpg",
+              "origFileName": "EXPO-2019-20.jpg",
+              "url": "/https://vepimg.b8cdn.com/uploads/vjfnew/3631/uploads/vjf/content/misc/16269666445f875cd1ea57420aad6db106_EXPO-2019-20.jpg",
+              "_id": "5f3bc87426399367e433d69b",
+              "type": "image",
+              "fileSize": 78772
+            }
+          ],
+          "group": "gallery"
+        }
+// ]]></script> 
+               </a><a href="#" class="gallery-lightbox w-inline-block w-lightbox"><img src="https://vepimg.b8cdn.com/uploads/vjfnew/3631/uploads/vjf/content/misc/162672839360b93aedb90e29b0d97df8c6_EXPO-2019-6-p-500.jpeg" sizes="(max-width: 479px) 84vw, (max-width: 767px) 43vw, (max-width: 991px) 20vw, 12vw" srcset="https://vepimg.b8cdn.com/uploads/vjfnew/3631/uploads/vjf/content/misc/162672839360b93aedb90e29b0d97df8c6_EXPO-2019-6-p-500.jpeg" class="gallery-thumbnail" caption="false" width="500" height="400"/> 
+               <script type="application/json" class="w-json">// <![CDATA[
+{
+          "items": [
+            {
+              "type": "image",
+              "_id": "5f3bc963b3bde9111c474fee",
+              "fileName": "60817d258510bd2a343d53ea_EXPO-2019-6.jpg",
+              "origFileName": "EXPO-2019-6.jpg",
+              "width": 750,
+              "height": 600,
+              "fileSize": 46998,
+              "url": "/https://vepimg.b8cdn.com/uploads/vjfnew/3631/uploads/vjf/content/misc/16269666755f875cd1ea5742821f6db107_EXPO-2019-6.jpg"
+            }
+          ],
+          "group": "gallery"
+        }
+// ]]></script> 
+               </a></div>
+         </div>
+      </div>
+   </div>
+   <p><img src="https://vepimg.b8cdn.com/uploads/vjfnew/3631/uploads/vjf/content/misc/1626966701icon-flowing-01.svg" loading="lazy" alt="" class="swoosh"/></p>
+   <div id="client-testimonials" class="testimonials">
+      <div class="section-body-div">
+         <div>
+            <h1 class="grey_heading" style="text-align: left;"><strong>Presentation Spotlights</strong></h1>
+            <div class="blue_line teal"></div>
+         </div>
+      </div>
+      <div class="holder-testimonials actual-holder">
+         <div class="testimonial-div-box">
+            <div class="inner-div">
+               <div class="testimonial-text-div">
+                  <div class="img-div _3 humana"></div>
+                  <div class="name-position"><strong>Humana</strong></div>
+                  <div class="testimonial-text-2 expo-para"><br/>
+                     Platinum Sponsor Presentation</div>
+               </div>
+            </div>
+         </div>
+         <div class="testimonial-div-box">
+            <div class="inner-div">
+               <div class="testimonial-text-div">
+                  <div class="img-div _1 excelus excellus"><img src="https://vepimg.b8cdn.com/uploads/vjfnew/3631/uploads/vjf/content/misc/1626729114unitedhealthcare2.svg" loading="lazy" width="269" height="97" caption="false"/></div>
+                  <div class="name-position"><strong>UnitedHealthcare</strong></div>
+                  <div class="testimonial-text-2 expo-para"><br/>
+                     Diamond Sponsor Presentation</div>
+               </div>
+            </div>
+         </div>
+         <div class="testimonial-div-box">
+            <div class="inner-div">
+               <div class="testimonial-text-div">
+                  <div class="img-div _1 dwayne"></div>
+                  <div class="name-position">
+                     <div class="name-position"><strong>Dwayne McFerrin</strong></div>
+                     <div class="title-2 expo-title"><strong>CLU, CFP, RHU, CLTC</strong></div>
+                  </div>
+                  <div class="testimonial-text-2 expo-para">Chairman, NAHU Medicare Advisory Committee<br/>
+                     &zwj;<br/>
+                     NAHU Prescription Drug Task Force</div>
+               </div>
+            </div>
+         </div>
+         <div class="testimonial-div-box">
+            <div class="inner-div">
+               <div class="testimonial-text-div">
+                  <div class="img-div _1 excelus excellus"><img src="https://vepimg.b8cdn.com/uploads/vjfnew/3631/uploads/vjf/content/misc/162696677660b93af4973f1069be066544_excellus-live fearless.png" loading="lazy" alt=""/></div>
+                  <div class="name-position"><strong>Excellus BlueCross BlueShield</strong></div>
+                  <div class="testimonial-text-2 expo-para"><br/>
+                     Diamond Sponsor Presentation</div>
+               </div>
+            </div>
+         </div>
+      </div>
+   </div>
+   <div class="div-block-1056 reverse"></div>
+   <div id="client-testimonials" class="event-sponsors">
+      <div class="featured-in-logos">
+         <div class="section-body-div hiw">
+            <div>
+               <h1 class="grey_heading" style="text-align: left;"><strong>Event Sponsors</strong></h1>
+               <div class="blue_line teal"></div>
+            </div>
+            <!-- SPONSORS ARE HERE --> <img src="https://vepimg.b8cdn.com/uploads/vjfnew/3631/uploads/vjf/content/misc/1626966805open-graph-cvi-05.png" class="open-graph-image" width="1200" height="628"/>
+            <div class="centered-container w-container">
+               <div class="gallery-grid-container"><a target="_blank" rel="noopener noreferrer" href="/https://www.humana.com/"><img src="https://vepimg.b8cdn.com/uploads/vjfnew/3631/uploads/vjf/content/misc/1626729184expo-sponsor-01.png" alt="Humana" title="Humana" class="gallery-thumbnail" width="627" height="788" caption="false"/></a> <a target="_blank" rel="noopener noreferrer" href="/https://www.uhc.com/"><img src="https://vepimg.b8cdn.com/uploads/vjfnew/3631/uploads/vjf/content/misc/1626729203expo-sponsor-02.png" alt="UnitedHealthcare" title="UnitedHealthcare" class="gallery-thumbnail" width="627" height="788" caption="false"/></a> <a target="_blank" rel="noopener noreferrer" href="/https://www.excellusbcbs.com/"><img src="https://vepimg.b8cdn.com/uploads/vjfnew/3631/uploads/vjf/content/misc/1626729220expo-sponsor-03.png" alt="Excellus BlueCross BlueShield" title="Excellus BlueCross BlueShield" class="gallery-thumbnail" width="626" height="788" caption="false"/></a> <a target="_blank" rel="noopener noreferrer" href="/https://www.molinahealthcare.com/"><img src="https://vepimg.b8cdn.com/uploads/vjfnew/3631/uploads/vjf/content/misc/1626729242expo-sponsor-04.png" alt="Molina Healthcare" title="Molina Healthcare" class="gallery-thumbnail" width="626" height="789" caption="false"/></a> <a target="_blank" rel="noopener noreferrer" href="/https://www.vsp.com/"><img src="https://vepimg.b8cdn.com/uploads/vjfnew/3631/uploads/vjf/content/misc/1626729261expo-sponsor-06.png" alt="VSP Individual Vision Plans" title="VSP Individual Vision Plans" class="gallery-thumbnail" width="627" height="789" caption="false"/></a> <a target="_blank" rel="noopener noreferrer" href="/https://www.bcbswny.com/"><img src="https://vepimg.b8cdn.com/uploads/vjfnew/3631/uploads/vjf/content/misc/1626729291expo-sponsor-05.png" alt="BlueCross BlueShield of Western New York" title="BlueCross BlueShield of Western New York" class="gallery-thumbnail" width="625" height="787" caption="false"/></a> <a target="_blank" rel="noopener noreferrer" href="/https://www.bsneny.com/"><img src="https://vepimg.b8cdn.com/uploads/vjfnew/3631/uploads/vjf/content/misc/1626729336expo-sponsor-07.png" alt="BlueShield of Northeastern New York" title="BlueShield of Northeastern New York" class="gallery-thumbnail" width="626" height="789" caption="false"/></a> <a target="_blank" rel="noopener noreferrer" href="/http://www.targetleads.com/"><img src="https://vepimg.b8cdn.com/uploads/vjfnew/3631/uploads/vjf/content/misc/1626729359expo-sponsor-08.png" alt="TargetLeads" title="TargetLeads" class="gallery-thumbnail" width="627" height="788" caption="false"/></a> <a target="_blank" rel="noopener noreferrer" href="/https://www.nahu.org/"><img src="https://vepimg.b8cdn.com/uploads/vjfnew/3631/uploads/vjf/content/misc/1626729379expo-sponsor-09.png" alt="National Association of Health Underwriters (NAHU)" title="National Association of Health Underwriters (NAHU)" class="gallery-thumbnail" width="626" height="788" caption="false"/></a> <a target="_blank" rel="noopener noreferrer" href="/https://www.aetnamedicare.com/"><img src="https://vepimg.b8cdn.com/uploads/vjfnew/3631/uploads/vjf/content/misc/1626729398expo-sponsor-10.png" alt="SilverScript (part of Aetna Medicare)" title="SilverScript (part of Aetna Medicare)" class="gallery-thumbnail" width="626" height="789" caption="false"/></a> <a target="_blank" rel="noopener noreferrer" href="/https://www.wellcare.com/"><img src="https://vepimg.b8cdn.com/uploads/vjfnew/3631/uploads/vjf/content/misc/1626729414expo-sponsor-11.png" alt="WellCare" title="WellCare" class="gallery-thumbnail" caption="false" width="199" height="251"/></a> <a target="_blank" rel="noopener noreferrer" href="/https://www.surebridgeinsurance.com/"><img src="https://vepimg.b8cdn.com/uploads/vjfnew/3631/uploads/vjf/content/misc/1626729430expo-sponsor-12.png" alt="SureBridge" title="SureBridge" class="gallery-thumbnail" width="626" height="789" caption="false"/></a> <a target="_blank" rel="noopener noreferrer" href="/https://www.geisinger.org/"><img src="https://vepimg.b8cdn.com/uploads/vjfnew/3631/uploads/vjf/content/misc/1626729449expo-sponsor-13.png" alt="Geisinger Health System" title="Geisinger Health System" class="gallery-thumbnail" width="626" height="789" caption="false"/></a> <a target="_blank" rel="noopener noreferrer" href="/https://www.emblemhealth.com/"><img src="https://vepimg.b8cdn.com/uploads/vjfnew/3631/uploads/vjf/content/misc/1626729467expo-sponsor-14.png" alt="EmblemHealth &amp; Connecticare" title="EmblemHealth &amp; Connecticare" class="gallery-thumbnail" width="627" height="789" caption="false"/></a> <a target="_blank" rel="noopener noreferrer" href="/https://home.globelifeinsurance.com/"><img src="https://vepimg.b8cdn.com/uploads/vjfnew/3631/uploads/vjf/content/misc/1626729487sponsors-16.png" alt="Globe Life" title="Globe Life" class="gallery-thumbnail" caption="false" width="199" height="251"/></a> <a target="_blank" rel="noopener noreferrer" href="/https://www.anthem.com/"><img src="https://vepimg.b8cdn.com/uploads/vjfnew/3631/uploads/vjf/content/misc/1626787076anthem-sponsor-01.png" alt="Anthem Blue Cross" title="Anthem Blue Cross" class="gallery-thumbnail" width="627" height="788" caption="false"/></a> <a target="_blank" rel="noopener noreferrer" href="/https://www.webce.com/carevalue/home"><img src="https://vepimg.b8cdn.com/uploads/vjfnew/3631/uploads/vjf/content/misc/1627396973webce-spons-01.png" alt="WebCE" title="WebCE" class="gallery-thumbnail" width="627" height="788" caption="false"/></a></div>
+            </div>
+            <!-- END OF SPONSORS --></div>
+      </div>
+   </div>
+   <!-- START SPONSOR VIDEOS -->
+   <div class="sponsor-videos">
+      <h1 class="grey_heading" style="text-align: left;"><strong>Sponsor Videos</strong></h1>
+      <div class="blue_line teal"></div>
+      <div class="centered-container w-container"><!-- HUMANA -->
+         <div class="big-video">
+            <video width="100%" height="auto" overflow="none" poster="https://vepimg.b8cdn.com/uploads/vjfnew/3631/uploads/vjf/content/misc/1627413687humanass.png" id="humana" playsinline="" autoplay="autoplay" muted="" loop="loop" controls="controls">
+               <source src="https://vepimg.b8cdn.com/uploads/vjfnew/3631/uploads/vjf/content/misc/1627411991This is Human Care Humana.mp4" type="video/mp4"/>
+            </video>
+         </div>
+         <div class="video-blocks"><!-- UNITED HEALTHCARE -->
+            <video width="100%" height="auto" overflow="none" poster="https://vepimg.b8cdn.com/uploads/vjfnew/3631/uploads/vjf/content/misc/16274125122021-07-27_11-24-34-min.png" id="uhc" playsinline="" muted="" loop="loop" controls="controls">
+               <source src="https://vepimg.b8cdn.com/uploads/vjfnew/3631/uploads/vjf/content/misc/1627399453Get Medicare Help From a Local UnitedHealthcare Agent in Rochester, NY.mp4" type="video/mp4"/>
+            </video>
+            <video width="100%" height="auto" overflow="none" poster="https://vepimg.b8cdn.com/uploads/vjfnew/3631/uploads/vjf/content/misc/1627412690excelusu.png" id="excellus" playsinline="" muted="" loop="loop" controls="controls">
+               <source src="https://vepimg.b8cdn.com/uploads/vjfnew/3631/uploads/vjf/content/misc/1627411529A Time to Reconnect (1).mp4" type="video/mp4"/>
+            </video>
+         </div>
+      </div>
+   </div>
+   <!-- END SPONSOR VIDEOS -->
+   <div id="gallery" class="faq">
+      <div class="faq-section-div">
+         <h1 class="grey_heading" style="text-align: left;"><strong>FAQs</strong></h1>
+         <div class="blue_line teal"></div>
+         <ul role="list" class="list-5">
+            <li class="list-item-18"><strong class="blue2">What is the CareValue Health and Wealth EXPO?</strong> <em>The conference is designed for insurance professionals who are looking to grow their network, increase their awareness on carrier plan changes, and build rapport with regional and national carriers.</em></li>
+            <li class="list-item-18"><strong class="blue2">Who is this event open to, and who should attend? </strong><em>Anyone in the insurance industry or interested can attend - this conference is a great way to connect with the CareValue team.&nbsp;&nbsp;</em></li>
+            <li class="list-item-18"><strong class="blue2">Do I need to register? </strong><em>Yes, you will need to register for the event to gain access. But the good news is that registration is FREE! CareValue Agents do not need to register - they will automatically be logged in with their CareValue credentials via SSO.</em></li>
+            <li class="list-item-18"><strong class="blue2">How does a virtual event work?&nbsp;</strong><em>The email address you used to register is your login ID. You can login anytime on the day of the event, or up to 30 days after the event. Once you login, you will be taken to our Virtual Lobby. From here, you can visit the Auditorium for virtual webinars or the Event Hall and visit vendor booths for valuable information.</em></li>
+            <li class="list-item-18"><strong class="blue2">How do I login on the day of the event?&nbsp;</strong><em>You will receive an email with login details before the event. You will use these details and the password that you set up to access the event.</em></li>
+            <li class="list-item-18"><strong class="blue2">The session times are not convenient for me. Can I still participate?&nbsp;</strong><em>Yes! The event will remain open to view and most of the sessions will be recorded and available on-demand for 30 days following the event, making it easy for you to participate when it is convenient for you!</em></li>
+            <li class="list-item-18"><strong class="blue2">Where will the event be held?&nbsp;</strong><em>The entire event is online. You will not have to travel to any specific location! All you need is internet access to participate in the CareValue Health and Wealth Expo, and the event will be accessible from a laptop or desktop computer, mobile device, or tablet.</em></li>
+            <li class="list-item-18"><strong class="blue2">Will I be able to take away any documents or files from the event?&nbsp;</strong><em>Yes! Just like an in-person event, you will have a &ldquo;bag&rdquo; that you will be able to put any documents into and download them!</em></li>
+            <li class="list-item-18"><strong class="blue2">Do I need to download or install any software to be able to attend this event?&nbsp;</strong><em>No! You do not need to download or install any special software to participate in the event. You only need to have access to the internet.</em></li>
+         </ul>
+         <a href="https://carevalueexpo.vfairs.com/en/registration" class="body_button w-button">Register HERE &gt;</a></div>
+   </div>
+   <div class="div-block-1056"></div>
+   <div class="footers">
+      <div class="footer-container w-container"><a href="https://carevalueexpo.vfairs.com/en/privacy-policy" class="buttonz w-button">Privacy Policy&nbsp;</a>
+         <div class="cv-icon"></div>
+         <a href="https://carevalueexpo.vfairs.com/en/terms-of-service" class="buttonz w-button">Terms of Service</a></div>
+      <div class="footer__bottom-2">
+         <div class="footer_section section--footer-bottom"><img src="https://vepimg.b8cdn.com/uploads/vjfnew/3631/uploads/vjf/content/misc/1626967068white-bar.svg" width="70" alt="" class="image-8" gt="" div=""/>
+            <p class="footer__bottom-text-2">&copy; 2021 Care Value, Inc.</p>
+            <p class="footer__bottom-text-2 footer__bottom-text--link">The information on this website is for agent use only and not intended for the general public.</p>
+         </div>
+      </div>
+   </div>
+   <p> 
+      <script src="js_/https://d3e54v103j8qbb.cloudfront.net/js/jquery-3.5.1.min.dc5e7f18c8.js?site=60b93ab81026ad43b475705d" type="text/javascript" integrity="" crossorigin="anonymous"></script> 
+      <script src="js_/https://uploads-ssl.webflow.com/60b93ab81026ad43b475705d/js/webflow.9bfd178dc.js" type="text/javascript"></script> 
+   </p>
+   <!-- [if lte IE 9]><script src="//cdnjs.cloudflare.com/ajax/libs/placeholders/3.0.2/placeholders.min.js"></script><![endif]--></div>
+<footer style="display: block" role="Footer" class="home-footer">
+   <div id="footer">
+      <div class="container">
+         <div class="row">
+            <div class="col-xs-6 padding footer-section-1"> <a href="https://carevalueexpo.vfairs.com/en/"> <img src="https://vepimg.b8cdn.com/uploads/vjfnew/3631/content/images/162503511860b93ae74f7513f1dd5837a4-expo-logo-01-svg1625035118.svg"/> </a> </div>
+            <div class="col-xs-6 footer-section-2" style="text-align: right !important;float: right !important;"> <a target="_blank" href="/https://www.vfairs.com/"> <img src="https://vepimg.b8cdn.com/uploads/vjf/common/poweredby-vfairs.png"> </a> 
+               <!--<nav class="navbar navbar-default">
+                          <div class="container-fluid">
+                            <div class="navbar-collapse" id="">
+                              <ul class="nav navbar-nav" style="display:none;">
+                                <li><a href="/en">Home</a></li>
+                                <li><a href="https://efair.abudhabi.ae/en/aboutus">About Us</a></li>
+                                <li><a href="https://efair.abudhabi.ae/en/page/24">Employers</a></li>
+                              </ul>
+                            </div>
+                          </div>
+                        </nav>--> 
+            </div>
+         </div>
+         <div class="row foot_bootom">
+            <div class="col-sm-6"><!--2015 © vFAIRS.com.--> 
+               <a href="/https://www.vfairs.com/privacy-policy/" class="gray">Privacy Policy</a> | <a href="/https://www.vfairs.com/terms-of-service/" class="gray">Terms of Service </a> </div>
+            <div class="col-sm-6">
+               <div class="social_icon"> 
+                  <!--<a href="#" class="rss"></a>
+                            <a href="#" class="fb"></a>
+                            <a href="#" class="twitter"></a>
+                            <a href="#" class="linkedin"></a>--> 
+               </div>
+            </div>
+         </div>
+      </div>
+   </div>
+</footer>
+<script type="text/javascript">
+    app_id = 3631;
+    user_id = 0;
+    booth_id = 0;
+    user_type_id = 0;
+    is_two_factor_screen = 0;
+
+    // This is for form builder edit mode.
+    
+    if(typeof IsLogedin=="undefined"){
+      IsLogedin = false;
+    }
+    if(typeof IsEventLive=="undefined") {
+      IsEventLive = false;
+    }
+
+    function updateStatTracker(app_id, type_id,user_id,content_id){
+        var GetUserStat = new Object();
+        GetUserStat.AppId = app_id;
+        GetUserStat.TypeId = type_id;
+        GetUserStat.Lang = 'en';
+        GetUserStat.UserId = user_id;
+        GetUserStat.ContentId = content_id;
+        $.post(window.location.origin + "/en/UpdateStatTrackerDirect", GetUserStat).done(function (resp) {
+            var re = /\s\s+/g;
+            var response = resp.replace(re, ' ');
+            var json = JSON.parse(response);
+        });
+    }
+
+    $(document).ready(function () {
+
+        if(IsLogedin && IsEventLive){
+            $(".hide-on-login").hide();
+            $(".show-on-login").show();
+        }else{
+          $(".hide-on-login").show();
+          $(".show-on-login").hide();
+        }
+
+        $(document).on("click", ".read-more-text", function(){
+            $($(this).attr("data-target")).slideToggle();
+        });
+
+        $(document).on("click", "#guest_login", function(){
+          $('#LoginModal').remove();
+          $("#auto-login-frm").submit();
+        });
+        
+        if(IsinIframe()){
+            $("#privacy_sticky,footer").hide();
+        }
+
+        if(app_id==550){
+            $("#LoginModal").modal({
+                backdrop: 'static',
+                keyboard: false
+            });
+        }
+                // Resend Email
+        $('.resendbtn').on('click',function(){
+            var update_token_url = location.protocol + '//' + location.host + "/en/resend_token";
+            var update_token = new Object();
+            update_token.AppId = '3631';
+            update_token.Email = $("#uLoginEmail").val();
+            update_token.user_id = $("#user_id").val();
+            var csrfName = 'ci_csrf_token';
+            var csrfHash = '';
+            update_token[csrfName] = csrfHash;
+            $.post(update_token_url, update_token).done(function (resp) {
+                $('#tokenResponseBox').html("The verification code has been sent again.");
+                $('#tokenResponseBox').show('slow');
+                setTimeout(function(){ $('#tokenResponseBox').hide('slow'); }, 10000);
+                startTimer(60)
+            })
+        })
+        // end Resend Email
+        function startTimer(duration) {
+            $('.resendbtn').attr('disabled',true)
+            console.log('TEST',duration)
+            var timer = duration, minutes, seconds;
+            var x = setInterval(function () {
+                minutes = parseInt(timer / 60, 10);
+                seconds = parseInt(timer % 60, 10);
+
+                minutes = minutes < 10 ? "0" + minutes : minutes;
+                seconds = seconds < 10 ? "0" + seconds : seconds;
+
+                // display.textContent = minutes + ":" + seconds;
+
+                if (--timer < 0) {
+                    //timer = duration;
+                    $('.resendbtn').removeAttr('disabled')
+                    clearInterval(x);
+                }
+                $('#countdown-timer').html(minutes+":"+seconds);
+            }, 1000);
+        }
+        
+        if ($('#clockdiv').length > 0) {
+            var deadline = -24294870000;
+            if (deadline > 0) {
+                initializeClock('clockdiv', deadline);
+            }
+        }
+        $(".less-characters,.less-characters-btn").on("click", function () {
+            $(".more-characters").show();
+            //$(this).hide();
+        });
+        $(".more-characters").on("click", function () {
+            //$(".less-characters").show();
+            //$(this).hide();
+        });
+                    if (IsLogedin && IsEventLive && "false" == 'false') {
+                $("a[data-target=#LoginModal]").attr("href", "/en/hall").removeAttr("data-target").html("Login / Access the Online Event");
+                $('.hide-on-login').hide();
+                $('.hide-on-login').addClass('hide');
+                $('.show-on-login').show();
+            }
+                    setTimeout(function () {
+            $(".slider-thumb-img:first").trigger("click");
+        }, 1000);
+        $(".slider-thumb-img").on("click", function () {
+            var title = $(this).attr("title");
+            var largeimage = $(this).attr("data-img");
+            var description = $(this).attr("data-description");
+            var text = $(this).children(".slider-thumb-text-box").html();
+            $(".image-heading-text").hide().html(title).fadeIn(900);
+            if(description!=""){
+                $(".image-description-text").hide().html(description).fadeIn(900);
+            }
+            $("#large-image-box-slider").hide().attr("src", largeimage).fadeIn(900);
+            $(".image-info-text").html(text);
+        });
+
+                                    });
+
+
+    // Forms Validations for employer_reg page
+    $(document).ready(function () {
+        
+        if (IsLogedin && IsEventLive && $.inArray(parseInt(app_id), [526, 690])!=0 ) {
+            /*$("button:contains('Click Here To Login'),button:contains('Enter the Virtual Event')").on("click", function () {
+                window.location = window.location.origin + "/en/hall";
+            });
+            //$("button:contains('Click Here To Login')").html("Enter the Virtual Event");*/
+        }
+        $("#LogoutBtn").on("click", function () {
+            window.location = window.location.origin + '/en/logout';
+        });
+        $("#ShowLoginBox-for-attend").on("click", function () {
+            if (IsLogedin && IsEventLive) {
+                window.location = window.location.origin + '/en/attend-and-win-feed-back';
+            } else {
+                $("input[name='login-red'][type='hidden']").val(window.location.origin + "/en/attend-and-win-feed-back");
+                $("#LoginBtn").trigger("click");
+            }
+        });
+        // Get Stats of Total Registrations
+                // End Get Total Registrations Stats
+
+        $(".showsamples").on("click", function () {
+            $('#cv-samples').modal({
+                keyboard: true
+            });
+        });
+        // Video Player Box
+        $(".fancylinkIframeCustomAsh").on("click", function () {
+            var url = ($(this).attr("href") == '#1' ? "/https://vep.b8cdn.com/test-drive/videos/vid-en-14-06-2015.html" : "/https://vep.b8cdn.com/test-drive/videos/vid-ar-14-06-2015.html");
+            var BuildHTML = "<iframe width='100%' height='100%' border='0' src='" + url + "'></iframe>";
+            $("#VideoPlayerModal-Content").html(BuildHTML);
+            $('#VideoPlayerModal').modal({
+                keyboard: true
+            });
+        });
+        $('#VideoPlayerModal').on('hidden.bs.modal', function (e) {
+            $("#VideoPlayerModal-Content").html("");
+        });
+
+        // VFF Foras (Iraq)
+        $(".TrackForas-Visitors").on("click", function () {
+            var ClickType = $(this).attr("id").replace("Foras-Count-", "");
+            var TrackURL = window.location.origin + "/en/forasvisitorsupdate";
+            var TrackObj = new Object();
+            TrackObj.AppId = 103;
+            TrackObj.ClickType = ClickType;
+            TrackObj.Lang = 'en';
+            $.post(TrackURL, TrackObj).done(function (resp) {
+                // Response Received Filter response
+                var re = /\s\s+/g;
+                resp = resp.replace(re, ' ');
+                RespObject = JSON.parse(resp);
+            });
+        });
+        // End VJF Foras (Iraq)
+
+
+        // eFair Harcode things
+        $("select[name='field_id_1237510']").on('change', function () {
+            var getthis = $(this);
+            if (getthis.val() != "") {
+                getthis.closest(".ctrl-hdn-cstm").next(".ctrl-hdn-cstm").hide();
+                $("#field_id_1237512").parent().parent(".ctrl-hdn-cstm").hide();
+            } else {
+                getthis.closest(".ctrl-hdn-cstm").next(".ctrl-hdn-cstm").show();
+                $("#field_id_1237512").parent().parent(".ctrl-hdn-cstm").show();
+            }
+        });
+        $("select[name='field_id_1237511']").on('change', function () {
+            var getthis = $(this);
+            if (getthis.val() != "") {
+                getthis.closest(".ctrl-hdn-cstm").prev(".ctrl-hdn-cstm").hide();
+                $("select[name='field_id_1237513']").parent().parent(".ctrl-hdn-cstm").hide();
+            } else {
+                getthis.closest(".ctrl-hdn-cstm").prev(".ctrl-hdn-cstm").show();
+                $("select[name='field_id_1237513']").parent().parent(".ctrl-hdn-cstm").show();
+            }
+        });
+        //
+
+        $("#launch").hide();
+        
+        // Hardcode for Are you Student ? eFair (78)
+        $("input[name='field_id_1237508']").on('change', function () {
+            var PrevJobField = $(this).parents().closest(".form-group").prev('.form-group');
+            var SelectedVal = $("input[name='field_id_1237508']:checked").val();
+            var ChildItems = $(this).parent().closest(".form-group").nextAll('.ctrl-hdn-cstm');
+            if (SelectedVal == '1') {
+                PrevJobField.hide();
+                $("#field_id_43012").rules("add", {
+                    Student: true,
+                    messages: {
+                        Student: "Please enter a valid Abu Dhabi University student email!",
+                    }
+                });
+                ChildItems.show();
+            } else {
+                PrevJobField.show();
+                $("#field_id_43012").rules("remove", "Student");
+                ChildItems.hide();
+            }
+        });
+
+
+        // Hardcode for Secondory City selection (MOH 107)
+        $("select[name='field_id_1237503']").on('change', function () {
+
+            var Select1 = "<option value=''>-- Select --</option><option value='Ahsa'>Ahsa</option><option value='Al Taif'>Al Taif</option><option value='Al Qunfudhah'>Al Qunfudhah</option>";
+            var Select2 = "<option value=''>-- Select --</option><option value='Hail'>Hail</option><option value='Qatif'>Qatif</option><option value='Jouf'>Jouf</option>";
+            var Select3 = "<option value=''>-- Select --</option><option value='Bisha'>Bisha</option><option value='Hafr al Batin'>Hafr al Batin</option><option value='Northern Boarders'>Northern Boarders</option>";
+            var Select4 = "<option value=''>-- Select --</option><option value='Bisha'>Bisha</option><option value='Hail'>Hail</option><option value='Al Ahsa'>Al Ahsa</option>";
+            var Select5 = "<option value=''>-- Select --</option><option value='Hafr Al Batin'>Hafr Al Batin</option><option value='Al Qatif'>Al Qatif</option><option value='Al Qunfudhah'>Al Qunfudhah</option>";
+
+            if ($(this).val() == '1') {
+                $("select[name='field_id_1237507']").html(Select1);
+            } else if ($(this).val() == '2') {
+                $("select[name='field_id_1237507']").html(Select2);
+            }
+            else if ($(this).val() == '3') {
+                $("select[name='field_id_1237507']").html(Select3);
+            } else if ($(this).val() == '4') {
+                $("select[name='field_id_1237507']").html(Select4);
+            } else {
+                $("select[name='field_id_1237507']").html(Select5);
+            }
+            $("select[name='field_id_1237507']").parent().parent().show();
+        });
+
+
+        // Hardcode for licence selection (MOH 107)
+        $("select[name='field_id_1237504']").on('change', function () {
+            if ($(this).val() == '1') {
+                $(this).parent().parent().nextAll(':lt(2)').show();
+            } else {
+                $(this).parent().parent().nextAll(':lt(2)').hide();
+            }
+        });
+
+        
+         
+        $("select[name='field_id_1242077']").on("change",function(){
+            var myValues = $(this).val();
+            if(myValues==1){
+                $("#group-container-field_id_1242077 p.help-block").html("<ul class='drop-down-help-font'><li>A great way to go further with Ford is to join the company through the Ford College Graduate (FCG) program. Most departments offer these programs, which provide recent college graduates a variety of rotational job assignments during their first few years with Ford Motor Company.</li><li>Through the rotational assignments, the programs’ objective is to strengthen the FCGs business acumen and technical skills through rapid exposure to varied business activities.</li><li>Upon completion of the program, the FCGs “graduates” and is placed within his or her home department to continue building a career at Ford.</li><li> To learn more about Ford’s College Graduate Program, <a target='_blank' href='/https://corporate.ford.com/careers/students-and-recent-grads.html'>click here</a>.</li></ul>");
+            }else if(myValues==2){
+                $("#group-container-field_id_1242077 p.help-block").html("<ul class='drop-down-help-font'><li>The Ford Summer Internship Program provides students with hands-on, career-specific experience through full-time work during summer break (from early-May through the end of August). Students are engaged in networking and educational activities throughout their internship to gain exposure to senior level management and to learn more about Ford, our values and career opportunities.</li><li>Most Summer Interns will have just completed their junior year of an undergraduate program or one academic year of a Master's program and are expecting to graduate the following year. Generally, candidates are selected for having top academic standing, as well as exceptional leadership, communication and self-motivation skills.</li></ul>");
+            }else if(myValues==3){
+                $("#group-container-field_id_1242077 p.help-block").html("<ul class='drop-down-help-font'><li>When you join Ford Motor Company, your journey begins. You become part of skilled and motivated teams making inspired products that create a better world. If that sounds extraordinary to you, you may have just reached the end of your career search. Check out our opportunities for experienced professionals.</li></ul>");
+            }else{
+                $("#group-container-field_id_1242077 p.help-block").html("");
+            }
+        });
+
+        $("select[name='field_id_1242084']").on("change",function(){
+            var myValues = $(this).val();
+            if(myValues==1){
+                $("#group-container-field_id_1242084 p.help-block").html("<ul class='drop-down-help-font'><li>Neurodiverse, Autism and Disability Hiring Program</li><li>To learn more about FordWorks program, <a href='/https://corporate.ford.com/careers/fordworks.html' target='_blank'>click here</a></li></ul>");
+            }else if(myValues==2){
+                $("#group-container-field_id_1242084 p.help-block").html("<ul class='drop-down-help-font'><li>Ford's re-entry program aims to help career re-launchers get back into the workforce. The program is looking for candidates who have taken a career break or have been underemployed for two or more years. Ford offers re-entry candidates a full-time position while providing tools to successfully re-acclimate into the workforce.)</li><li>To learn more about Ford's Re-Entry program, <a href='/https://corporate.ford.com/careers/re-entry-program.html' target='_blank'>click here</a>.</li></ul>");
+            }else{
+                $("#group-container-field_id_1242084 p.help-block").html("");
+            }
+        });
+           
+   
+
+
+
+                // invite to vfairs form
+        $("#invite_to_vfair_form").validate({
+            rules: {
+                'email[]': {
+                    require_from_group: [1, ".email-group"],
+                    email:true
+                }
+            },
+            highlight: function (element) {
+                $(element).closest('.form-group').addClass('has-error');
+            },
+            unhighlight: function (element) {
+                $(element).closest('.form-group').removeClass('has-error');
+            },
+            errorElement: 'span',
+            errorClass: 'help-block',
+            errorPlacement: function (error, element) {
+                if (element.parent('.input-group').length) {
+                    error.insertAfter(element.parent());
+                } else {
+                    error.insertAfter(element);
+                }
+            },
+            submitHandler: function () {
+                $(".invite-to-vfair-form-container .alert").remove();
+
+                var FeedBackURL = window.location.origin + "/en/invite_to_vfair";
+                var inviter_name = "";
+                var inviter_email = "";
+                if( $("#invite_to_vfair_form input[name='inviter_name']").length==0){
+                    $("#invite_to_vfair_form").prepend("<input type='hidden' name='inviter_name' value='" + inviter_name + "'/>");
+                }
+                if( $("#invite_to_vfair_form input[name='inviter_email']").length==0){
+                    $("#invite_to_vfair_form").prepend("<input type='hidden' name='inviter_email' value='" + inviter_email + "'/>");
+                }
+                $.post(FeedBackURL, $("#invite_to_vfair_form").serialize()).done(function (server_response) {
+                    var re = /\s\s+/g;
+                    var response = server_response.replace(re, ' ');
+                    var object = JSON.parse(response);
+                    if (object.status) {
+                        $(".invite-to-vfair-description").hide();
+                        $(".invite-to-vfair-form-container").html("<div class='col-sm-8 alert alert-success'>" + object.message +"</div>");
+                    } else {
+                        $(".invite-to-vfair-form-container").append("<div class='col-sm-8 alert alert-danger'>" + object.message +"</div>");
+                    }
+                });
+            }
+        });
+
+        // Script for Bayt.Careers
+        $("#feedbackfrm").validate({
+            rules: {
+                experience: {
+                    minlength: 50,
+                    maxlength: 400,
+                    required: true
+                },
+                rate: {
+                    minlength: 50,
+                    maxlength: 400,
+                    required: true
+                },
+                useful: {
+                    minlength: 50,
+                    maxlength: 400,
+                    required: true
+                },
+                service: {
+                    minlength: 50,
+                    maxlength: 400,
+                    required: true
+                }
+            },
+            highlight: function (element) {
+                $(element).closest('.form-group').addClass('has-error');
+            },
+            unhighlight: function (element) {
+                $(element).closest('.form-group').removeClass('has-error');
+            },
+            errorElement: 'span',
+            errorClass: 'help-block',
+            errorPlacement: function (error, element) {
+                if (element.parent('.input-group').length) {
+                    error.insertAfter(element.parent());
+                } else {
+                    error.insertAfter(element);
+                }
+            },
+            submitHandler: function () {
+                var FeedBackURL = window.location.origin + "/en/feed_back_attend_win";
+                var FeedBack = new Object();
+                FeedBack.AppId = 108;
+                FeedBack.Lang = 'en';
+                FeedBack.experience = $("#experience").val();
+                FeedBack.rate = $("#rate").val();
+                FeedBack.useful = $("#useful").val();
+                FeedBack.service = $("#service").val();
+                $.post(FeedBackURL, FeedBack).done(function (resp) {
+                    var re = /\s\s+/g;
+                    resp = resp.replace(re, ' ');
+                    RespObject = JSON.parse(resp);
+                    if (RespObject.Status) {
+                        $("#FeedBackResponseMsg").removeClass("FormResponseError").addClass("FormResponseSuccess").html(RespObject.Message);
+                        $('#feedbackfrm')[0].reset();
+                    } else {
+                        if (RespObject.Message == "Please login first.") {
+                            $("#LoginBtn").trigger("click");
+                            $("#ResponseBox").html(RespObject.Message).show();
+                        } else {
+                            $("#FeedBackResponseMsg").removeClass("FormResponseSuccess").addClass("FormResponseError").html(RespObject.Message);
+                        }
+                    }
+                });
+            }
+        });
+        // End Script Bayt Careers
+
+
+        // Participation form for crisil.vfairs.com (564)
+        $("#participation-confirmation-form").validate({
+            rules: {
+                participant_email: {
+                    required: true,
+                    email:true
+                }
+            },
+            highlight: function (element) {
+                $(element).closest('.form-group').addClass('has-error');
+            },
+            unhighlight: function (element) {
+                $(element).closest('.form-group').removeClass('has-error');
+            },
+            errorElement: 'span',
+            errorClass: 'help-block',
+            errorPlacement: function (error, element) {
+                if (element.parent('.input-group').length) {
+                    error.insertAfter(element.parent());
+                } else {
+                    error.insertAfter(element);
+                }
+            },
+            submitHandler: function () {
+                $("#error-box-participation-form").hide();
+                var ParticipationObj = new Object();
+                ParticipationObj.AppId = 564;
+                ParticipationObj.Lang = 'en';
+                ParticipationObj.email = $("#participant_email").val();
+
+                $.post(window.location.origin + "/en/participation_confirmation", ParticipationObj).done(function (resp) {
+                    var re = /\s\s+/g;
+                    resp = resp.replace(re, ' ');
+                    RespObject = JSON.parse(resp);
+                    if (RespObject.status) {
+                        $("#participation-modal .modal-body").html(RespObject.message);
+                    } else {
+                        $("#error-box-participation-form").html(RespObject.message).show();
+                    }
+                });
+            }
+        });
+
+        $("#call_for_proposal_form").validate({
+            rules: {
+                what_kind_of_session:{required:true},
+                session_format:{required:true},
+                session_title:{required:true},
+                session_abstract:{required:true},
+                session_full_description:{required:true},
+                action_take_away_1:{required:true},
+                action_take_away_2:{required:true},
+                action_take_away_3:{required:true},
+
+                speaker_full_name:{required:true},
+                speaker_email_address:{required:true,email:true},
+                speaker_title:{required:true},
+                speaker_organization:{required:true},
+                speaker_phone:{required:true},
+                speaker_social:{required:true},
+                other_speakers_multiple:{required:true},
+                list_any_speaking_engagements:{required:true},
+                speaker_bios:{required:true},
+                link_speaker_headshots:{required:true},
+            },
+            highlight: function (element) {
+                $(element).closest('.form-group').addClass('has-error');
+            },
+            unhighlight: function (element) {
+                $(element).closest('.form-group').removeClass('has-error');
+            },
+            errorElement: 'span',
+            errorClass: 'help-block',
+            errorPlacement: function (error, element) {
+                if (element.parent('.input-group').length) {
+                    error.insertAfter(element.parent());
+                } else {
+                    error.insertAfter(element);
+                }
+            },
+            submitHandler: function () {
+                var CallForProp = new Object();
+                CallForProp.AppId = 549;
+                CallForProp.what_kind_of_session =  $("#what_kind_of_session").val();
+                CallForProp.session_format =  $("#session_format").val();
+                CallForProp.session_title =  $("#session_title").val();
+                CallForProp.session_abstract =  $("#session_abstract").val();
+                CallForProp.session_full_description =  $("#session_full_description").val();
+                CallForProp.action_take_away_1 =  $("#action_take_away_1").val();
+                CallForProp.action_take_away_2 =  $("#action_take_away_2").val();
+                CallForProp.action_take_away_3 =  $("#action_take_away_3").val();
+                CallForProp.speaker_full_name =  $("#speaker_full_name").val();
+                CallForProp.speaker_email_address =  $("#speaker_email_address").val();
+                CallForProp.speaker_title =  $("#speaker_title").val();
+
+                CallForProp.target_audience = $('#treeview-container').treeview('selectedValues').join(", ");
+
+                CallForProp.speaker_organization =  $("#speaker_organization").val();
+                CallForProp.speaker_phone =  $("#speaker_phone").val();
+                CallForProp.speaker_social =  $("#speaker_social").val();
+                CallForProp.other_speakers_multiple =  $("#other_speakers_multiple").val();
+                CallForProp.list_any_speaking_engagements =  $("#list_any_speaking_engagements").val();
+                CallForProp.speaker_bios =  $("#speaker_bios").val();
+                CallForProp.link_speaker_headshots =  $("#link_speaker_headshots").val();
+                CallForProp.type =  "CALL_FOR_PROPOSAL";
+
+                $.post(window.location.origin + "/en/call_for_proposal_form", CallForProp).done(function (resp) {
+                    var re = /\s\s+/g;
+                    resp = resp.replace(re, ' ');
+                    RespObject = JSON.parse(resp);
+                    if (RespObject.status) {
+                        $("#call_for_proposal_form div.row").html("<div class='col-sm-12'><h2>Thank you for submission.</h2></div>");
+                    } else {
+                        $("#call_for_proposal_form div.row").html("<p>Can not submit your proposal, please try again.</p>").show();
+                    }
+                });
+            }
+        });
+
+
+        $(".submitbtns").click(function () {
+            $(".submitbtns").attr("name", "false");
+            $(this).attr("name", "true");
+        });
+
+
+        var regValidateRules = {
+            firstname: {minlength: 3, maxlength: 15, required: true},
+            email: {required: true, email: true},
+            companyname: {minlength: 3, required: true},
+            category: {required: true},
+            Number: {minlength: 3, required: true, number: false},
+            industry: {required: true}
+        }
+
+                regValidateRules.CompanyURL = {required: false};
+        //regValidateRules.Location = {minlength: 3, required: true};
+        regValidateRules.Designation = {minlength: 3, required: true};
+        regValidateRules.classifyuser = {required: true};
+        
+        $('#RegisterFrm').validate({
+            rules: regValidateRules,
+            highlight: function (element) {
+                $(element).closest('.form-group').addClass('has-error');
+            },
+            unhighlight: function (element) {
+                $(element).closest('.form-group').removeClass('has-error');
+            },
+            errorElement: 'span',
+            errorClass: 'help-block',
+            errorPlacement: function (error, element) {
+                if (element.parent('.input-group').length) {
+                    error.insertAfter(element.parent());
+                } else {
+                    error.insertAfter(element);
+                }
+                return false; // <<- returning false stops the page reload
+            },
+            submitHandler: function (e) {
+
+                $("#RegisterFrm button").prop("disabled",true).text("Please wait.....");
+                var TrackURL = window.location.origin + "/en/update_employer_registration";
+                var TrackObj = new Object();
+                TrackObj.AppId = '3631';
+                TrackObj.Lang = 'en';
+                TrackObj.firstname = $("#firstname").val();
+                TrackObj.lastname = $("#lastname").val();
+                TrackObj.email = $("#email").val();
+                TrackObj.companyname = $("#companyname").val();
+                TrackObj.category = $("#category").val();
+                TrackObj.vendor = $("#vendor").val();
+                TrackObj.other_vendor = $("#other_vendor").val();
+                TrackObj.LearningOutcomes = $("#LearningOutcomes").val();
+                TrackObj.SessionTopic = $("#SessionTopic").val();
+                TrackObj.phone = $("#phone").val();
+                TrackObj.howdoyouhear = $("#howdoyouhear").val();
+                TrackObj.time_zone = $("#time_zone").val();
+                TrackObj.city = ($("#city").length > 0 ? $("#city").val() : "");
+                TrackObj.state = ($("#state").length > 0 ? $("#state").val() : "");
+                TrackObj.zipcode = ($("#zipcode").length > 0 ? $("#zipcode").val() : "");
+
+                
+                                TrackObj.CompanyURL = $("#CompanyURL").val();
+                TrackObj.Location = $("#Location").val();
+                TrackObj.Designation = $("#Designation").val();
+                TrackObj.Number = $("#Number").val();
+                TrackObj.classifyuser = $("#classifyuser").val();
+                TrackObj.Message = $("#Message").val();
+                TrackObj.industry = $("#industry").val();
+                TrackObj.RegisterType = ($("#RegisterBtn").attr("name") == 'true' ? true : false);
+
+                $.post(TrackURL, TrackObj).done(function (resp) {
+                    var re = /\s\s+/g;
+                    resp = resp.replace(re, ' ');
+                    RespObject = JSON.parse(resp);
+                    if (RespObject.Status) {
+                        $('#RegisterFrm')[0].reset();
+                        $(".form-area").hide();
+                        if (TrackObj.AppId == 160) {
+                            $('<div class="text-center"><a href="#" class="btn-yellow">Download Sponsorship and Exhibitor Packages</a></div>').insertAfter("#ResponseMsg");
+                        }
+                        if (TrackObj.AppId == 664) {
+                            $('<div class="msg alert-success">Thank you for showing interest. Our team will contact you soon.</div>').insertAfter("#response");
+                        }
+                        $(".page-description-area").hide();
+                        $("#ResponseMsg").removeClass("alert-danger").addClass("alert-success").html(RespObject.Message).show();
+                    } else {
+                        $("#RegisterFrm button").prop("disabled",false);
+                        $("#ResponseMsg").removeClass("alert-success").addClass("alert-danger").html(RespObject.Message).show();
+                    }
+                    return false; // <<- returning false stops the page reload
+                });
+
+                $("#RegisterFrm button").prop("disabled",false);
+                return false; // <<- returning false stops the page reload
+            }
+        });
+    });
+
+    /// Validation End
+    
+
+
+
+    // Forgot Password Section Start
+
+    // Hide login modal on showing reset password modal
+    $('#forgot-pwd-modal').on('shown.bs.modal', function (e) {
+        $("#forgot-pwd-responseBox").html("").hide();
+        $('#LoginModal').modal('hide');
+    });
+
+    // Validate and reset call for forgot password
+    var PassresetValidateRules = {
+        resetemail: {required: true, email: true}
+    };
+
+        $('#reset-pwd-frm').validate({
+        rules: PassresetValidateRules,
+        highlight: function (element) {
+            $(element).closest('.form-group').addClass('has-error');
+        },
+        unhighlight: function (element) {
+            $(element).closest('.form-group').removeClass('has-error');
+        },
+        errorElement: 'span',
+        errorClass: 'help-block',
+        errorPlacement: function (error, element) {
+            if (element.parent('.input-group').length) {
+                error.insertAfter(element.parent());
+            } else {
+                error.insertAfter(element);
+            }
+        },
+        submitHandler: function () {
+            var PwdResetURL = location.protocol + '//' + location.host + "/en/reset_user_password";
+                        var ResetPwdObj = new Object();
+            ResetPwdObj.AppId = '3631';
+            ResetPwdObj.Lang = 'en';
+            ResetPwdObj.Email = $("#resetemail").val();
+            ResetPwdObj.pwd = ($("#pwd").length > 0 ? $("#pwd").val() : "");
+            var csrfName = 'ci_csrf_token';
+            var csrfHash = '';
+            ResetPwdObj[csrfName] = csrfHash;
+
+            $.post(PwdResetURL, ResetPwdObj).done(function (resp) {
+                var re = /\s\s+/g;
+                resp = resp.replace(re, ' ');
+                RespObject = JSON.parse(resp);
+                if (RespObject.Status) {
+                    $('#reset-pwd-frm')[0].reset();
+                    $("#forgot-pwd-responseBox").removeClass("FormResponseError").addClass("FormResponseSuccess").html(RespObject.Message).show();
+                } else {
+                    $("#forgot-pwd-responseBox").removeClass("FormResponseSuccess").addClass("FormResponseError").html(RespObject.Message).show();
+                }
+                if (typeof passwordResetCallBack !== 'undefined') {
+                    passwordResetCallBack(RespObject);
+                }
+            });
+        }
+    });
+
+    // Forgot Password Section End //
+
+    // update on login consent + password (768)
+    $('#update_pwd_frm_update_consent').validate({
+      rules: {
+        uLoginEmail: {required: true, email: true},
+        uPassword: {required: true, minlength: 5},
+        uConfirmPassword: {required: true, minlength: 5, equalTo: "#uPassword"},
+        uConsent: {required: true},
+      },
+      highlight: function (element) {
+        $(element).closest('.form-group').addClass('has-error');
+      },
+      unhighlight: function (element) {
+        $(element).closest('.form-group').removeClass('has-error');
+      },
+      errorElement: 'span',
+      errorClass: 'help-block',
+      errorPlacement: function (error, element) {
+        if (element.parent('.input-group').length) {
+          error.insertAfter(element.parent());
+        } else {
+          error.insertAfter(element);
+        }
+      },
+      submitHandler: function () {
+        var update_pwd_url = location.protocol + '//' + location.host + "/en/update_new_user_password_on_login";
+        var update_pwd = new Object();
+        update_pwd.AppId = '3631';
+        update_pwd.token = $("#pwd-reset-update-token-id").val();
+        update_pwd.newpassword = $("#uConfirmPassword").val();
+        update_pwd.Lang = 'en';
+        update_pwd.Email = $("#uLoginEmail").val();
+        update_pwd.consent = ($("#uConsent").is(":checked") ? 1 : 0);
+        
+        $.post(update_pwd_url, update_pwd).done(function (resp) {
+          var re = /\s\s+/g;
+          resp = resp.replace(re, ' ');
+          RespObject = JSON.parse(resp);
+          if (RespObject.Status) {
+            if(update_pwd.AppId==564){
+              $('#update-pwd-window-body').html("<div class='form-group message-form-group'><p>Password has been updated successfully, please wait logging you in.</p></div>");
+              $("input[name='LoginEmail']").val(update_pwd.Email);
+              $("input[name='LoginEmail']").parents(".form-group:first").append("<input type='hidden' name='auto_login' value='true'/><input type='password' name='Password' value='" + update_pwd.newpassword +"'/>");
+              setTimeout(function(){
+                $("#Main-Login-Frm").submit();
+              },2000);
+            }else{
+              $('#update-pwd-window-body').html("<div class='form-group message-form-group'><p>" + RespObject.Message +"</p></div>");
+            }
+            $('#update-pwd-window .modal-footer button:last').remove();
+            $('#update-pwd-window .modal-footer button:last').text("Close");
+
+          } else {
+            $("#update-pwd-window-body .message-form-group").removeClass("FormResponseSuccess").addClass("FormResponseError").html(RespObject.Message).show();
+          }
+        });
+      }
+    });
+    // end update on login appid:(768)
+
+    // update on login (262)
+    $('#update-pwd-Frm_update').validate({
+        rules: {
+            uLoginEmail: {required: true},
+            uPassword: {required: true, minlength: 5},
+            uConfirmPassword: {required: true, minlength: 5, equalTo: "#uPassword"}
+        },
+        highlight: function (element) {
+            $(element).closest('.form-group').addClass('has-error');
+        },
+        unhighlight: function (element) {
+            $(element).closest('.form-group').removeClass('has-error');
+        },
+        errorElement: 'span',
+        errorClass: 'help-block',
+        errorPlacement: function (error, element) {
+            if (element.parent('.input-group').length) {
+                error.insertAfter(element.parent());
+            } else {
+                error.insertAfter(element);
+            }
+        },
+        submitHandler: function () {
+            var update_pwd_url = location.protocol + '//' + location.host + "/en/update_new_user_password_on_login";
+            var update_pwd = new Object();
+            update_pwd.AppId = '3631';
+            update_pwd.token = $("#pwd-reset-update-token-id").val();
+            update_pwd.newpassword = $("#uConfirmPassword").val();
+            update_pwd.Lang = 'en';
+            update_pwd.Email = $("#uLoginEmail").val();
+            $.post(update_pwd_url, update_pwd).done(function (resp) {
+                var re = /\s\s+/g;
+                resp = resp.replace(re, ' ');
+                RespObject = JSON.parse(resp);
+                if (RespObject.Status) {
+                    if(update_pwd.AppId==564){
+                        $('#update-pwd-window-body').html("<div class='form-group message-form-group'><p>Password has been updated successfully, please wait logging you in.</p></div>");
+                        $("input[name='LoginEmail']").val(update_pwd.Email);
+                        $("input[name='LoginEmail']").parents(".form-group:first").append("<input type='hidden' name='auto_login' value='true'/><input type='password' name='Password' value='" + update_pwd.newpassword +"'/>");
+                        setTimeout(function(){
+                            $("#Main-Login-Frm").submit();
+                        },2000);
+                    }else{
+                        $('#update-pwd-window-body').html("<div class='form-group message-form-group'><p>" + RespObject.Message +"</p></div>");
+                    }
+                    $('#update-pwd-window .modal-footer button:last').remove();
+                    $('#update-pwd-window .modal-footer button:last').text("Close");
+
+                } else {
+                    $("#update-pwd-window-body .message-form-group").removeClass("FormResponseSuccess").addClass("FormResponseError").html(RespObject.Message).show();
+                }
+            });
+        }
+    });
+    // end update on login appid:(262)
+
+    // update on login (3568)
+    $('#update-pwd-Frm_update_consent').validate({
+        rules: {
+            uLoginEmail: {required: true, email: true},
+            uPassword: {required: true, minlength: 5},
+            uConfirmPassword: {required: true, minlength: 5, equalTo: "#uPassword"},
+            uConsent: {required: true},
+            field_id_1273574: {required: true},
+        },
+        highlight: function (element) {
+            $(element).closest('.form-group').addClass('has-error');
+        },
+        unhighlight: function (element) {
+            $(element).closest('.form-group').removeClass('has-error');
+        },
+        errorElement: 'span',
+        errorClass: 'help-block',
+        errorPlacement: function (error, element) {
+            if (element.parent('.input-group').length) {
+                error.insertAfter(element.parent());
+            } else {
+                error.insertAfter(element);
+            }
+        },
+        submitHandler: function () {
+            var update_pwd_url = location.protocol + '//' + location.host + "/en/update_new_user_password_on_login";
+            var update_pwd = new Object();
+            update_pwd.AppId = '3631';
+            update_pwd.token = $("#pwd-reset-update-token-id").val();
+            update_pwd.newpassword = $("#uConfirmPassword").val();
+            update_pwd.Lang = 'en';
+            update_pwd.Email = $("#uLoginEmail").val();
+            update_pwd.consent = ($("#uConsent").is(":checked") ? 1 : 0);
+            update_pwd.field_id_1273574 = $("#field_id_1273574").val();
+            
+            $.post(update_pwd_url, update_pwd).done(function (resp) {
+                var re = /\s\s+/g;
+                resp = resp.replace(re, ' ');
+                RespObject = JSON.parse(resp);
+                if (RespObject.Status) {
+                   
+                    $('#update-pwd-window-body').html("<div class='form-group message-form-group'><p>" + RespObject.Message +"</p></div>");
+                    
+                    $('#update-pwd-window .modal-footer button:last').remove();
+                    $('#update-pwd-window .modal-footer button:last').text("Close");
+
+                } else {
+                    $("#update-pwd-window-body .message-form-group").removeClass("FormResponseSuccess").addClass("FormResponseError").html(RespObject.Message).show();
+                }
+            });
+        }
+    });
+    // end update on login appid:(3568)
+
+    // update on login (4467)
+    $('#update-pwd-Frm_update_extra_fields').validate({
+        rules: {
+            uLoginEmail: {required: true, email: true},
+            uPassword: {required: true, minlength: 5, maxlength: 100},
+            uConfirmPassword: {required: true, minlength: 5, maxlength: 100,equalTo: "#uPassword"},
+            uConsent: {required: true},
+            field_id_1284014: {required: true},
+            field_id_1284015: {required: true},
+            field_id_1284016: {required: true},
+            field_id_1284018: {required: true},
+            field_id_1284019: {required: true},
+        },
+        highlight: function (element) {
+            $(element).closest('.form-group').addClass('has-error');
+        },
+        unhighlight: function (element) {
+            $(element).closest('.form-group').removeClass('has-error');
+        },
+        errorElement: 'span',
+        errorClass: 'help-block',
+        errorPlacement: function (error, element) {
+            if (element.parent('.input-group').length) {
+                error.insertAfter(element.parent());
+            } else {
+                error.insertAfter(element);
+            }
+        },
+        submitHandler: function () {
+            var update_pwd_url = location.protocol + '//' + location.host + "/en/update_new_user_password_on_login";
+            var update_pwd = new Object();
+            update_pwd.AppId = '3631';
+            update_pwd.token = $("#pwd-reset-update-token-id").val();
+            update_pwd.newpassword = $("#uConfirmPassword").val();
+            update_pwd.Lang = 'en';
+            update_pwd.Email = $("#uLoginEmail").val();
+            update_pwd.consent = ($("#uConsent").is(":checked") ? 1 : 0);
+            update_pwd.field_id_1284014 = $("#field_id_1284014").val();
+            update_pwd.field_id_1284015 = $("#field_id_1284015").val();
+            update_pwd.field_id_1284016 = $("#field_id_1284016").val();
+            update_pwd.field_id_1284018 = $("#field_id_1284018").val();
+            update_pwd.field_id_1284019 = $("#field_id_1284019").val();
+            update_pwd.field_id_1284020 = $("#field_id_1284020").val();
+            
+            $.post(update_pwd_url, update_pwd).done(function (resp) {
+                var re = /\s\s+/g;
+                resp = resp.replace(re, ' ');
+                RespObject = JSON.parse(resp);
+                if (RespObject.Status) {
+                   
+                    $('#update-pwd-window-body').html("<div class='form-group message-form-group'><p>" + RespObject.Message +"</p></div>");
+                    
+                    $('#update-pwd-window .modal-footer button:last').remove();
+                    $('#update-pwd-window .modal-footer button:last').text("Close");
+
+                } else {
+                    $("#update-pwd-window-body .message-form-group").removeClass("FormResponseSuccess").addClass("FormResponseError").html(RespObject.Message).show();
+                }
+            });
+        }
+    });
+    // end update on login appid:(4467)
+    // update on login (4827)
+    $('#update-pwd-Frm_update_school_field').validate({
+        rules: {
+            uLoginEmail: {required: true, email: true},
+        },
+        highlight: function (element) {
+            $(element).closest('.form-group').addClass('has-error');
+        },
+        unhighlight: function (element) {
+            $(element).closest('.form-group').removeClass('has-error');
+        },
+        errorElement: 'span',
+        errorClass: 'help-block',
+        errorPlacement: function (error, element) {
+            if (element.parent('.input-group').length) {
+                error.insertAfter(element.parent());
+            } else {
+                error.insertAfter(element);
+            }
+        },
+        submitHandler: function () {
+            var update_pwd_url = location.protocol + '//' + location.host + "/en/update_new_user_password_on_login";
+            var update_pwd = new Object();
+            update_pwd.AppId = '3631';
+            update_pwd.token = $("#pwd-reset-update-token-id").val();
+            update_pwd.Lang = 'en';
+            update_pwd.Email = $("#uLoginEmail").val();
+            update_pwd.field_id_1290124 = $("#field_id_1290124").val();
+            
+            $.post(update_pwd_url, update_pwd).done(function (resp) {
+                var re = /\s\s+/g;
+                resp = resp.replace(re, ' ');
+                RespObject = JSON.parse(resp);
+                if (RespObject.Status) {
+                    $('#update-pwd-window-body').html("<div class='form-group message-form-group'><p>" + RespObject.Message +"</p></div>");
+                    $("input[name='LoginEmail']").val(update_pwd.Email);
+                    $("input[name='LoginEmail']").parents(".form-group:first").append("<input type='hidden' name='auto_login' value='true'/>");
+                    setTimeout(function(){
+                        $("#Main-Login-Frm").submit();
+                    },2000);
+                } else {
+                    $("#update-pwd-window-body .message-form-group").removeClass("FormResponseSuccess").addClass("FormResponseError").html(RespObject.Message).show();
+                }
+            });
+        }
+    });
+    // end update on login appid:(4827)
+
+    
+
+    var password_reset_rules = {
+      updatepwdemail: {required: true, email: true},
+      updatepwdnewpwd: {required: true, minlength: 5,maxlength:100},
+      updatepwdconfirm: {required: true, minlength: 5, maxlength:100,equalTo: "#updatepwdnewpwd"}
+    };
+    
+
+    if(app_id==1389){
+        $.validator.addMethod("checklower", function(value, element) {
+            return /[a-z]/.test(value);
+        },"Need atleast 1 lowercase alphabet");
+        $.validator.addMethod("checkupper", function(value, element) {
+            return /[A-Z]/.test(value);
+        },"Need atleast 1 uppercase alphabet");
+        $.validator.addMethod("checkdigit", function(value, element) {
+            return /[0-9]/.test(value);
+        },"Need atleast 1 digit");
+        // $.validator.addMethod("pwcheck", function(value) {
+        //     return /^[A-Za-z0-9\d=!\-@._*]*$/.test(value) && /[a-z]/.test(value) && /\d/.test(value) && /[A-Z]/.test(value);
+        // },"Password is not strong enough");
+
+        password_reset_rules.updatepwdnewpwd = {required: true, minlength: 8, maxlength: 100, checklower: true,checkupper: true,checkdigit: true},
+        password_reset_rules.updatepwdconfirm = {required: true, minlength: 8, maxlength: 100, equalTo: "#updatepwdnewpwd"}
+    }
+
+    if(app_id==2952){
+        password_reset_rules.updatepwdnewpwd = {required: true, minlength: 8,maxlength: 100};
+        password_reset_rules.updatepwdconfirm = {required: true, minlength: 8, maxlength: 100, equalTo: "#updatepwdnewpwd"};
+    }
+
+    password_reset_rules.updatepwdnewpwd['minlength'] = 6;
+password_reset_rules.updatepwdconfirm['minlength'] = 6;
+
+    // Set new password
+    $('#reset-update-pwd-frm').validate({
+        rules: password_reset_rules,
+        highlight: function (element) {
+            $(element).closest('.form-group').addClass('has-error');
+        },
+        unhighlight: function (element) {
+            $(element).closest('.form-group').removeClass('has-error');
+        },
+        errorElement: 'span',
+        errorClass: 'help-block',
+        errorPlacement: function (error, element) {
+            if (element.parent('.input-group').length) {
+                error.insertAfter(element.parent());
+            } else {
+                error.insertAfter(element);
+            }
+        },
+        submitHandler: function () {
+            var update_pwd_url = location.protocol + '//' + location.host + "/en/update_new_user_password";
+            var update_pwd = new Object();
+            update_pwd.AppId = '3631';
+            update_pwd.token = $("#pwd-reset-update-token").val();
+            update_pwd.newpassword = $("#updatepwdconfirm").val();
+            update_pwd.Lang = 'en';
+            update_pwd.Email = $("#updatepwdemail").val();
+            var csrfName = 'ci_csrf_token';
+            var csrfHash = '';
+            update_pwd[csrfName] = csrfHash;
+
+            $.post(update_pwd_url, update_pwd).done(function (resp) {
+                var re = /\s\s+/g;
+                resp = resp.replace(re, ' ');
+                let RespObject = JSON.parse(resp);
+                if (RespObject.Status) {
+                    $('#reset-update-pwd-frm')[0].reset();
+                    $('#reset-update-pwd-frm .form-group:not(:last-child)').hide();
+                    $('#reset-update-pwd-frm .modal-footer button:last').hide();
+                    $("#reset-pwd-responseBox").removeClass("FormResponseError").addClass("FormResponseSuccess").html(RespObject.Message).show();
+                } else {
+                    $("#reset-pwd-responseBox").removeClass("FormResponseSuccess").addClass("FormResponseError").html(RespObject.Message).show();
+                }
+
+                if (typeof passwordResetSuccessCallBack !== 'undefined') {
+                  passwordResetSuccessCallBack(RespObject);
+                }
+
+            });
+        }
+    });
+
+
+    $('#LoginModal').on('hidden.bs.modal', function (e) {
+        $("#ResponseBox").html("").hide();
+    });
+        
+    if(document.location.hash!="" && (document.location.hash.indexOf("booth-")==1 || document.location.hash.indexOf("webinar-")==1 || document.location.hash.indexOf("Booth-")==1 || document.location.hash.indexOf("toyota")==1 || document.location.hash.indexOf("custom-cms-page")==1 || document.location.hash.indexOf("diversity-and-inclusion")==1)){
+        if(app_id==586){
+            $("input[name='login-red']").val("/en/hall" +  document.location.hash);
+        }else if(app_id==343){
+          $("input[name='login-red']").val("/en/hall" +  document.location.hash);
+          $("#LoginModal").modal("show");
+        }else if(app_id==690){
+              $("input[name='login-red']").val("/en/hall" +  document.location.hash);
+              setTimeout(function() {
+                $(".two-btns .guest-login:first").trigger("click");
+              }, 1000);
+        }else{
+            $("#LoginModal").modal("show");
+            $("input[name='login-red']").val("/en/hall" +  document.location.hash);
+        }
+    }
+
+    // dynamic password policies related
+    // number check
+    jQuery.validator.addMethod("policy_reset_arabic_num", function (value, element) {
+        return /\d/.test(value);
+    }, "Password must contain one numeric eg (0-9)");
+
+    // lowercase alphabet a-z
+    jQuery.validator.addMethod("policy_reset_roman_lower", function (value, element) {
+        return /[a-z]/.test(value);
+    }, "Password must contain any of lower case letters (a...z)");
+
+    // upper case alphabet A-Z
+    jQuery.validator.addMethod("policy_reset_roman_upper", function (value, element) {
+        return /[A-Z]/.test(value);
+    }, "Password must contain any of upper case letters (A...Z)");
+
+    // special characters  (e.g. ~ ! @ # $ & -)
+    jQuery.validator.addMethod("policy_reset_special_characters", function (value, element) {
+        var special_characters = /[~!@#$&-]/;
+        return special_characters.test(value);
+    }, "Password must contain any of special characters eg (~ ! @ # $ & -)");
+    // dynamic password policies related
+
+    jQuery.validator.addMethod("USJEmailEmp", function (value, element) {
+      if (/@usj.edu.mo\s*$/.test(value) || /@ashfaqsolangi.com\s*$/.test(value)) {
+        return true;
+      }else{
+        return false;
+      }
+    }, "Please use your official email (eg @usj.edu.mo).");
+
+    jQuery.validator.addMethod("bscEmployeeID", function (value, element) {
+      return (value!="" && value.length == 7 && $.isNumeric(value) ? true : false);
+    }, "Enter your 7-digit Employee ID");
+
+    jQuery.validator.addMethod("allowed_arm_only", function (value, element) {
+      if (/@arm.com\s*$/.test(value) || /@liveunion.co.uk\s*$/.test(value) || /@armchina.com\s*$/.test(value) ||
+          /@treasure-data.com\s*$/.test(value) || /@ashfaqsolangi.com\s*$/.test(value)) {
+        return true;
+      }else{
+        return false;
+      }
+    }, "Please use your official email, provided email address is not allowed.");
+
+    jQuery.validator.addMethod("CRIAQOnly", function (value, element) {
+      if (/@3m.com\s*$/.test(value) || /@a7integration.com\s*$/.test(value) || /@acsynam.com\s*$/.test(value) ||
+        /@advancedpowdercoatinginc.com\s*$/.test(value) || /@aeromontreal.ca\s*$/.test(value) || /@aeronyx.ca\s*$/.test(value) ||
+        /@admtl.com\s*$/.test(value) || /@aiac.ca\s*$/.test(value) || /@asiiweb.com\s*$/.test(value) ||
+        /@apnca.com\s*$/.test(value) || /@vyoo.ai\s*$/.test(value) || /@ara-uas.com\s*$/.test(value) ||
+        /@atem.com\s*$/.test(value) || /@athenatechno.tech\s*$/.test(value) || /@avr-global.com\s*$/.test(value) ||
+        /@l3commercialaviation.com\s*$/.test(value) || /@avior.ca\s*$/.test(value) || /@bmu.co\s*$/.test(value) ||
+        /@bellhelicopter.com\s*$/.test(value) || /@biexpertise.com\s*$/.test(value) || /@binarieslid.com\s*$/.test(value) ||
+        /@bombardier.com\s*$/.test(value) || /@cae.com\s*$/.test(value) || /@calogysolutions.com\s*$/.test(value) ||
+        /@asc-csa.gc.ca\s*$/.test(value) || /@carillon.ca\s*$/.test(value) || /@cgq.qc.ca\s*$/.test(value) ||
+        /@cmqtr.qc.ca\s*$/.test(value) || /@crvi.ca\s*$/.test(value) || /@ctmp.ca\s*$/.test(value) ||
+        /@cqrda.caglish\s*$/.test(value) || /@cegepmontpetit.ca\s*$/.test(value) || /@ciena.com\s*$/.test(value) ||
+        /@cmcelectronics.ca\s*$/.test(value) || /@cdcq.qc.ca\s*$/.test(value) || /@compositesvci.com\s*$/.test(value) ||
+        /@genikinc.com\s*$/.test(value) || /@concordia.ca\s*$/.test(value) || /@crim.ca\s*$/.test(value) ||
+        /@criq.qc.ca\s*$/.test(value) || /@cscanada.ca\s*$/.test(value) || /@deepsight.ca\s*$/.test(value) ||
+        /@delastek.com\s*$/.test(value) || /@deleaves-drone.com\s*$/.test(value) || /@demaspa.it\s*$/.test(value) ||
+        /@dronevolt.com\s*$/.test(value) || /@etsmtl.ca\s*$/.test(value) || /@polymtl.ca\s*$/.test(value) ||
+        /@elastoproxy.com\s*$/.test(value) || /@electro-kut.com\s*$/.test(value) || /@elementai.com\s*$/.test(value) ||
+        /@elisen-assoc.com\s*$/.test(value) || /@equispheres.com\s*$/.test(value) || /@castolin.com-CA\s*$/.test(value) ||
+        /@exonetik.com\s*$/.test(value) || /@exonetik.com\s*$/.test(value) || /@flying-whales.com\s*$/.test(value) ||
+        /@frqnt.gouv.qc.ca\s*$/.test(value) || /@fusia.fr\s*$/.test(value) || /@microsoft.com\s*$/.test(value) ||
+        /@fzengineering.com\s*$/.test(value) || /@gardn.org\s*$/.test(value) || /@globvision.com\s*$/.test(value) ||
+        /@economie.gouv.qc.ca\s*$/.test(value) || /@gcttg.com\s*$/.test(value) || /@hec.ca\s*$/.test(value) ||
+        /@herouxdevtek.com\s*$/.test(value) || /@humanitas.io\s*$/.test(value) || /@hutchinson.com\s*$/.test(value) ||
+        /@hydroquebec.com\s*$/.test(value) || /@idscorporation.com\s*$/.test(value) || /@visiooimage.com\s*$/.test(value) ||
+        /@ivisolutions.ca\s*$/.test(value) || /@ino.ca\s*$/.test(value) || /@inrs.caglish\s*$/.test(value) ||
+        /@keitas.com\s*$/.test(value) || /@kinovarobotics.com\s*$/.test(value) || /@biomaterials.kruger.com\s*$/.test(value) ||
+        /@l3t.com\s*$/.test(value) || /@laflamme-ing.com\s*$/.test(value) || /@latesys.com\s*$/.test(value) ||
+        /@libellulemonde.com\s*$/.test(value) || /@liburdi.com\s*$/.test(value) || /@socomore.com\s*$/.test(value) ||
+        /@magellan.aero\s*$/.test(value) || /@mss.ca\s*$/.test(value) || /@marinvent.com\s*$/.test(value) ||
+        /@mayahtt.com\s*$/.test(value) || /@mcgill.ca\s*$/.test(value) || /@mdacorporation.com\s*$/.test(value) ||
+        /@mecanum.com\s*$/.test(value) || /@melocheinc.com\s*$/.test(value) || /@messier-dowty.com\s*$/.test(value) ||
+        /@nachurs-alpine.com\s*$/.test(value) || /@nrc-cnrc.gc.cag\s*$/.test(value) || /@nergica.com\s*$/.test(value) ||
+        /@netur.ca\s*$/.test(value) || /@neuralvol.com\s*$/.test(value) || /@ngcaerospace.com\s*$/.test(value) ||
+        /@nordiasoft.com\s*$/.test(value) || /@notostechnologies.com\s*$/.test(value) || /@novika.ca\s*$/.test(value) ||
+        /@nrc-cnrc.gc.cag\s*$/.test(value) || /@theobjects.com\s*$/.test(value) || /@opal-rt.com\s*$/.test(value) ||
+        /@optonique.ca\s*$/.test(value) || /@ova.ai\s*$/.test(value) || /@parker.com\s*$/.test(value) ||
+        /@pwc.ca\s*$/.test(value) || /@precisionadm.com\s*$/.test(value) || /@presagis.com\s*$/.test(value) ||
+        /@prop-air.com\s*$/.test(value) || /@pultrusiontech.com\s*$/.test(value) || /@qohash.com\s*$/.test(value) ||
+        /@queensu.ca\s*$/.test(value) || /@reactiondynamics.space\s*$/.test(value) || /@rheagroup.com\s*$/.test(value) ||
+        /@rockwellcollins.com\s*$/.test(value) || /@rolls-royce.com\s*$/.test(value) || /@pmscada.ca\s*$/.test(value) ||
+        /@safran-helicopter-engines.com\s*$/.test(value) || /@savinte.com\s*$/.test(value) || /@seedai.ca\s*$/.test(value) ||
+        /@siicanada.com\s*$/.test(value) || /@dcm.aero\s*$/.test(value) || /@sita.aero\s*$/.test(value) ||
+        /@solaxis.ca\s*$/.test(value) || /@sonacamontreal.com\s*$/.test(value) || /@sphereco.ca\s*$/.test(value) ||
+        /@stelia-aerospace.com\s*$/.test(value) || /@tecnar.com\s*$/.test(value) || /@teijincarbon.com\s*$/.test(value) ||
+        /@tekna.com\s*$/.test(value) || /@thalesgroup.com\s*$/.test(value) || /@thalesgroup.com\s*$/.test(value) ||
+        /@trafinc.com\s*$/.test(value) || /@tristarmulticopters.com\s*$/.test(value) || /@cedalma.com\s*$/.test(value) ||
+        /@umontreal.ca\s*$/.test(value) || /@usherbrooke.ca\s*$/.test(value) || /@uqac.ca\s*$/.test(value) ||
+        /@uqam.caglish\s*$/.test(value) || /@uqtr.ca\s*$/.test(value) || /@ulaval.ca\s*$/.test(value) ||
+        /@uwindsor.ca\s*$/.test(value) || /@valqari.com\s*$/.test(value) || /@vigilantglobal.com\s*$/.test(value) ||
+        /@vozwin.com\s*$/.test(value) || /@lets-warp.com\s*$/.test(value) || /@xonaspace.com\s*$/.test(value)) {
+        return true;
+      }else{
+        return false;
+      }
+    }, "Please use your CRIAQ member organization email address.");
+
+    jQuery.validator.addMethod("BlockedCadence", function (value, element) {
+        if (/@126.com\s*$/.test(value) || /@163.com\s*$/.test(value) || /@adelphia.net\s*$/.test(value) || /@air.net\s*$/.test(value) ||
+            /@airmail.net\s*$/.test(value) || /@aliyun.com\s*$/.test(value) || /@aol.com\s*$/.test(value) || /@atlanticbb.net\s*$/.test(value) ||
+            /@att.net\s*$/.test(value) || /@att.yahoo.com\s*$/.test(value) || /@attbi.com\s*$/.test(value) || /@attglobal.net\s*$/.test(value) ||
+            /@autowb.com\s*$/.test(value) || /@basicisp.net\s*$/.test(value) || /@bcpl.net\s*$/.test(value) || /@bellatlantic.net\s*$/.test(value) ||
+            /@bellnet.ca\s*$/.test(value) || /@bellsouth.net\s*$/.test(value) || /@bestweb.net\s*$/.test(value) || /@bev.net\s*$/.test(value) || /@blacksburg.net\s*$/.test(value) || /@blazenet.net\s*$/.test(value) ||
+            /@cableone.net\s*$/.test(value) || /@cais.net\s*$/.test(value) || /@cantv.net\s*$/.test(value) || /@capu.net\s*$/.test(value) || /@ce.medione.net\s*$/.test(value) || /@central.cox.net\s*$/.test(value) ||
+            /@centurylink.com\s*$/.test(value) || /@charm.net\s*$/.test(value) || /@charter.net\s*$/.test(value) || /@comcast.net\s*$/.test(value) || /@compuserve.com\s*$/.test(value) || /@concentric.net\s*$/.test(value) || /@covad.net\s*$/.test(value) || /@cox.net\s*$/.test(value) || /@coxmail.com\s*$/.test(value) || /@crosslink.net\s*$/.test(value) || /@csi.com\s*$/.test(value) || /@daum.net\s*$/.test(value) || /@dca.net\s*$/.test(value) || /@deltanet.com\s*$/.test(value) || /@direcway.com \s*$/.test(value) || /@dmv.com\s*$/.test(value) || /@dslextreme.com\s*$/.test(value) || /@earthlink.net\s*$/.test(value) || /@east.cox.net\s*$/.test(value) || /@edge.net\s*$/.test(value) || /@email.com\s*$/.test(value) || /@emsn.com\s*$/.test(value) || /@enter.net\s*$/.test(value) || /@erols.com\s*$/.test(value) || /@excite.com\s*$/.test(value) || /@ezy.net\s*$/.test(value) || /@fastmail.fm\s*$/.test(value) || /@fcc.net\s*$/.test(value) || /@flashcom.net\s*$/.test(value) || /@forthnet.gr\s*$/.test(value) || /@frontier.com\s*$/.test(value) || /@frontline.net\s*$/.test(value) || /@fullchannel.net\s*$/.test(value) || /@Gateway.net\s*$/.test(value) || /@gl.centurytel.net\s*$/.test(value) || /@gl.umbc.edu\s*$/.test(value) || /@gmail.co.in\s*$/.test(value) || /@gmail.com\s*$/.test(value) || /@gmail.hu\s*$/.test(value) || /@gmail.it\s*$/.test(value) || /@gmail.ru\s*$/.test(value) || /@gtei.bellatlantic.net\s*$/.test(value) || /@gti.net\s*$/.test(value) || /@gw.dmv.com\s*$/.test(value) || /@hanmail.net\s*$/.test(value) || /@hotcom\s*$/.test(value) || /@hotmail.com\s*$/.test(value) || /@ibm.net \s*$/.test(value) || /@idx4.com\s*$/.test(value) || /@iearthlink.net\s*$/.test(value) || /@ihwy.com\s*$/.test(value) || /@integra.net\s*$/.test(value) || /@interaccess.com\s*$/.test(value) || /@internetmci.com\s*$/.test(value) || /@ionet.net\s*$/.test(value) || /@i-plus.net\s*$/.test(value) || /@ismtp.earthlink.net\s*$/.test(value) || /@isp.com\s*$/.test(value) || /@itol.com\s*$/.test(value) || /@ix.netcom.com\s*$/.test(value) || /@juno.com\s*$/.test(value) || /@kulmeo.com\s*$/.test(value) || /@live.com\s*$/.test(value) || /@mchsi.com\s*$/.test(value) || /@mciworldcom.net \s*$/.test(value) || /@mediacomcable.com\s*$/.test(value) || /@medione.net\s*$/.test(value) || /@megapathdsl.net\s*$/.test(value) || /@mindspring.com\s*$/.test(value) || /@msn.com\s*$/.test(value) || /@mw.centurytel.net\s*$/.test(value) || /@nauticom.net\s*$/.test(value) || /@naver.com\s*$/.test(value) || /@netaddress.usa.net\s*$/.test(value) || /@netcom.ca\s*$/.test(value) || /@netcom.com \s*$/.test(value) || /@netscape.com\s*$/.test(value) || /@netzero.net\s*$/.test(value) || /@njd.xo.com\s*$/.test(value) || /@ntegra.net\s*$/.test(value) || /@nw.centurytel.net\s*$/.test(value) || /@olg.com\s*$/.test(value) || /@optonline.net\s*$/.test(value) || /@oranek.com\s*$/.test(value) || /@outblaze.com\s*$/.test(value) || /@outlook.com\s*$/.test(value) || /@pacbell.net \s*$/.test(value) || /@patmedia.net\s*$/.test(value) || /@peoplepc.com\s*$/.test(value) || /@pipeline.com\s*$/.test(value) || /@prodigy.net\s*$/.test(value) || /@proptd.net\s*$/.test(value) || /@psi.net\s*$/.test(value) || /@ptd.net\s*$/.test(value) || /@qis.net\s*$/.test(value) || /@qq.com\s*$/.test(value) || /@qwest.net\s*$/.test(value) || /@rackspace.com\s*$/.test(value) || /@rcn.com\s*$/.test(value) || /@relay.psi.net\s*$/.test(value) || /@rogers.com\s*$/.test(value) || /@rr.com\s*$/.test(value) || /@rsvhr.com\s*$/.test(value) || /@rupayamail.com\s*$/.test(value) || /@sbcglobal.net\s*$/.test(value) || /@sbcglobal.yahoo.com\s*$/.test(value) || /@sk.sympatico.ca\s*$/.test(value) || /@smarthost.cox.com\s*$/.test(value) || /@snip.net\s*$/.test(value) || /@so.centurytel.net\s*$/.test(value) || /@sprint.com\s*$/.test(value) || /@sprintmail.com \s*$/.test(value) || /@sprynet.com\s*$/.test(value) || /@starpower.net\s*$/.test(value) || /@suddenlink.com\s*$/.test(value) || /@surewest.net\s*$/.test(value) || /@swva.net\s*$/.test(value) || /@sympatico.ca\s*$/.test(value) || /@synacor.com\s*$/.test(value) || /@telus.net\s*$/.test(value) || /@toto.net\s*$/.test(value) || /@tucows.com\s*$/.test(value) || /@usa.net\s*$/.test(value) || /@usit.net\s*$/.test(value) || /@uu.net\s*$/.test(value) || /@veanlo.com\s*$/.test(value) || /@verizon.net\s*$/.test(value) || /@videotron.ca\s*$/.test(value) || /@webstable.com\s*$/.test(value) || /@west.cox.net\s*$/.test(value) || /@wideopenwest.com\s*$/.test(value) || /@windstream.com\s*$/.test(value) || /@wockcy.com\s*$/.test(value) || /@worldnet.att.net \s*$/.test(value) || /@xo.com\s*$/.test(value) || /@yahoo.ca\s*$/.test(value) || /@yahoo.cn\s*$/.test(value) || /@yahoo.co.id\s*$/.test(value) || /@yahoo.co.in\s*$/.test(value) || /@yahoo.co.jp\s*$/.test(value) || /@yahoo.co.kr\s*$/.test(value) || /@yahoo.co.nz\s*$/.test(value) || /@yahoo.co.th\s*$/.test(value) || /@yahoo.co.uk\s*$/.test(value) || /@yahoo.com\s*$/.test(value) || /@yahoo.de\s*$/.test(value) || /@yahoo.dk\s*$/.test(value) || /@yahoo.es\s*$/.test(value) || /@yahoo.fr\s*$/.test(value) || /@yahoo.gr\s*$/.test(value) || /@yahoo.ie\s*$/.test(value) || /@yahoo.in\s*$/.test(value) || /@yahoo.it\s*$/.test(value) || /@yahoo.no\s*$/.test(value) || /@yahoo.pl\s*$/.test(value) || /@yahoo.ro\s*$/.test(value) || /@yahoo.se\s*$/.test(value) || /@yahoogroups.com\s*$/.test(value) || /@ymail.com\s*$/.test(value) || /@yopmail.com\s*$/.test(value) || /@ziplink.net\s*$/.test(value) || /@rediffmail.com\s*$/.test(value) || /@icloud.com\s*$/.test(value) || /@alessandroogheri.com\s*$/.test(value) || /@abelite-da.com\s*$/.test(value) || /@adiva.com\s*$/.test(value) || /@advantest-ard.com\s*$/.test(value) || /@alatek.com\s*$/.test(value) || /@aldec.com\s*$/.test(value) || /@awaveip.com\s*$/.test(value) || /@altium.com\s*$/.test(value) || /@altium.com.au\s*$/.test(value) || /@amiq.com\s*$/.test(value) || /@analogbits.com\s*$/.test(value) || /@analogix.com\s*$/.test(value) || /@anasift.com\s*$/.test(value) || /@andestech.com\s*$/.test(value) || /@ankasys.com\s*$/.test(value) || /@ansys.com\s*$/.test(value) || /@apsimtech.com\s*$/.test(value) || /@adapt-io.com\s*$/.test(value) || /@arcadiainnovation.com\s*$/.test(value) || /@archelon.com\s*$/.test(value) || /@arteris.com\s*$/.test(value) || /@ascinc.com\s*$/.test(value) || /@asicdepot.com\s*$/.test(value) || /@asic-world.com\s*$/.test(value) || /@astc-design.com\s*$/.test(value) || /@atoptech.com\s*$/.test(value) || /@aumraj.com\s*$/.test(value) || /@aurora.tech\s*$/.test(value) || /@ausdia.com\s*$/.test(value) || /@autodesk.com\s*$/.test(value) || /@broadcom.com\s*$/.test(value) || /@avatar-da.com\s*$/.test(value) || /@averant.com\s*$/.test(value) || /@avery-design.com\s*$/.test(value) || /@axiscorp.com\s*$/.test(value) || /@axisdesign.com\s*$/.test(value) || /@axissystems.com\s*$/.test(value) || /@beyondsemi.com\s*$/.test(value) || /@bluepearlsoftware.com\s*$/.test(value) || /@bluespec.com\s*$/.test(value) || /@brekersystems.com\s*$/.test(value) || /@cad-design.com\s*$/.test(value) || /@cast-inc.com\s*$/.test(value) || /@ceva-dsp.com\s*$/.test(value) || /@cfdrc.com\s*$/.test(value) || /@chipglobe.com\s*$/.test(value) || /@chipmd.com\s*$/.test(value) || /@codasip.com\s*$/.test(value) || /@cst.com\s*$/.test(value) || /@Comsol.com\s*$/.test(value) || /@correctdesigns.com\s*$/.test(value) || /@cortus.com\s*$/.test(value) || /@coseda-tech.com\s*$/.test(value) || /@cwseda.com\s*$/.test(value) || /@credosemi.com\s*$/.test(value) || /@alibaba.com\s*$/.test(value) || /@cvcblr.com\s*$/.test(value) || /@3ds.com\s*$/.test(value) || /@defactotech.com\s*$/.test(value) || /@designw.com\s*$/.test(value) || /@diakopto.com\s*$/.test(value) || /@digitalcircuitdesign.com\s*$/.test(value) || /@dcd.pl\s*$/.test(value) || /@dolphin-design.fr\s*$/.test(value) || /@dspg.com\s*$/.test(value) || /@dynalith.com\s*$/.test(value) || /@easyic.ro\s*$/.test(value) || /@edaptive.com\s*$/.test(value) || /@elcamino.de\s*$/.test(value) || /@elgris.com\s*$/.test(value) || /@elsys-eastern.com\s*$/.test(value) || /@esperanto.ai\s*$/.test(value) || /@etopus.com\s*$/.test(value) || /@eurekatech.com\s*$/.test(value) || /@excellicon.com\s*$/.test(value) || /@fintronic.com\s*$/.test(value) || /@fishtail-da.com\s*$/.test(value) || /@fract-tech.com\s*$/.test(value) || /@frobas.com\s*$/.test(value) || /@fsresult.com\s*$/.test(value) || /@ftlsystems.com\s*$/.test(value) || /@gaisler.com\s*$/.test(value) || /@gemdt.com\s*$/.test(value) || /@guc-asic.com\s*$/.test(value) || /@hdl-dh.com\s*$/.test(value) || /@hisilicon.com\s*$/.test(value) || /@empyrean.com.cn\s*$/.test(value) || /@empyrean-tech.com\s*$/.test(value) || /@huawei.com\s*$/.test(value) || /@hypersilicon.com\s*$/.test(value) || /@ibextech.jp\s*$/.test(value) || /@icmanage.com\s*$/.test(value) || /@imgtec.com\s*$/.test(value) || /@ime.cas.cn\s*$/.test(value) || /@incentia.com\s*$/.test(value) || /@incoresemi.com\s*$/.test(value) || /@infinisim.com\s*$/.test(value) || /@innosilicon.com\s*$/.test(value) || /@inno-logic.com\s*$/.test(value) || /@inphi.com\s*$/.test(value) || /@insighteda.com\s*$/.test(value) || /@Integratedsoft.com\s*$/.test(value) || /@intelliprop.com\s*$/.test(value) || /@interrasystems.com\s*$/.test(value) || /@intusoft.com\s*$/.test(value) || /@ip-maker.com\s*$/.test(value) || /@iroctech.com\s*$/.test(value) || /@javelin-da.com\s*$/.test(value) || /@Jcmwave.com\s*$/.test(value) || /@jedat.co.jp\s*$/.test(value) || /@jtag.com\s*$/.test(value) || /@kandou.com\s*$/.test(value) || /@keysight.com\s*$/.test(value) || /@lorentzsolution.com\s*$/.test(value) || /@lowrisc.org\s*$/.test(value) || /@lucedaphotonics.com\s*$/.test(value) || /@m31tech.com\s*$/.test(value) || /@Magillem.com\s*$/.test(value) || /@magma.com\s*$/.test(value) || /@maviss-design.com\s*$/.test(value) || /@mayahtt.com\s*$/.test(value) || /@memscap.com\s*$/.test(value) || /@mentor.com\s*$/.test(value) || /@mentorg.com\s*$/.test(value) || /@mentorgraphics.com\s*$/.test(value) || /@methods2business.com\s*$/.test(value) || /@microeda.com\s*$/.test(value) || /@mixel.com\s*$/.test(value) || /@morethanip.com\s*$/.test(value) || /@mosys.com\s*$/.test(value) || /@motivo.ai\s*$/.test(value) || /@msol.co.jp\s*$/.test(value) || /@mti.com\s*$/.test(value) || /@mycad.com\s*$/.test(value) || /@nangate.com\s*$/.test(value) || /@nimbic.com\s*$/.test(value) || /@nobug.ro\s*$/.test(value) || /@nptest.com\s*$/.test(value) || /@nsysinc.com\s*$/.test(value) || /@ntlab.com\s*$/.test(value) || /@numeritech.com\s*$/.test(value) || /@nwlogic.com\s*$/.test(value) || /@oasis-ds.com\s*$/.test(value) || /@obsidiansoft.com\s*$/.test(value) || /@oea.com\s*$/.test(value) || /@onespin-solutions.com\s*$/.test(value) || /@opshub.com\s*$/.test(value) || /@optem.com\s*$/.test(value) || /@optimalcorp.com\s*$/.test(value) || /@Optiwave.com\s*$/.test(value) || /@oskitechnology.com\s*$/.test(value) || /@paradigm-works.com\s*$/.test(value) || /@paragon-ic.com\s*$/.test(value) || /@perceptionsoftware.com\s*$/.test(value) || /@perfectvips.com\s*$/.test(value) || /@pgc.com\s*$/.test(value) || /@pgc.com.tw\s*$/.test(value) || /@phoenixsoftware.com\s*$/.test(value) || /@Photond.com\s*$/.test(value) || /@pitsim.com\s*$/.test(value) || /@plda.com\s*$/.test(value) || /@prodesigncad.de\s*$/.test(value) || /@prodesign-europe.com\s*$/.test(value) || /@prolificinc.com\s*$/.test(value) || /@prolific.com.tw\s*$/.test(value) || /@prosilog.com\s*$/.test(value) || /@prover.com\s*$/.test(value) || /@provino-tech.com\s*$/.test(value) || /@ptc.com\s*$/.test(value) || /@pulsic.com\s*$/.test(value) || /@qdai.com\s*$/.test(value) || /@rachip.com\s*$/.test(value) || /@randomlogiccorp.com\s*$/.test(value) || /@realintent.com\s*$/.test(value) || /@remicro.com\s*$/.test(value) || /@Remcom.com\s*$/.test(value) || /@reshape.com\s*$/.test(value) || /@roalogic.com\s*$/.test(value) || /@robustchip.com\s*$/.test(value) || /@runtimeinc.com\s*$/.test(value) || /@s2cinc.com\s*$/.test(value) || /@s3group.com\s*$/.test(value) || /@safelogic.se\s*$/.test(value) || /@sagantec.de\s*$/.test(value) || /@sagantec.nl\s*$/.test(value) || /@sagantec.com\s*$/.test(value) || /@sandwork.com\s*$/.test(value) || /@kavcak.com\s*$/.test(value) || /@scianalog.com\s*$/.test(value) || /@sd.com\s*$/.test(value) || /@semifore.com\s*$/.test(value) || /@semtech.com\s*$/.test(value) || /@sequencedesign.com\s*$/.test(value) || /@sfmtech.com\s*$/.test(value) || /@shearwater.com\s*$/.test(value) || /@sifive.com\s*$/.test(value) || /@sicanvas.com \s*$/.test(value) || /@siemens.com\s*$/.test(value) || /@sierra-da.com\s*$/.test(value) || /@sifr.com\s*$/.test(value) || /@sisoft.com\s*$/.test(value) || /@sii.co.jp\s*$/.test(value) || /@siliconcr.com\s*$/.test(value) || /@siliconds.com\s*$/.test(value) || /@silicontechnologiesinc.com\s*$/.test(value) || /@siliconcanvas.com\s*$/.test(value) || /@silexinsight.com\s*$/.test(value) || /@silvaco.com\s*$/.test(value) || /@simantis.com\s*$/.test(value) || /@snowbush.com\s*$/.test(value) || /@softmixedsignal.com\s*$/.test(value) || /@sonicsinc.com\s*$/.test(value) || /@sonnetsoftware.com\s*$/.test(value) || /@stellacorp.co.jp\s*$/.test(value) || /@stonepillar.com\s*$/.test(value) || /@sycon-design.com\s*$/.test(value) || /@syncad.com\s*$/.test(value) || /@synopsys.co.jp\s*$/.test(value) || /@synopsys.com\s*$/.test(value) || /@syntacore.com\s*$/.test(value) || /@syntest.com\s*$/.test(value) || /@syosil.com\s*$/.test(value) || /@takumi-solutions.com\s*$/.test(value) || /@tanner.com\s*$/.test(value) || /@tdasystems.com\s*$/.test(value) || /@txcorp.com\s*$/.test(value) || /@tekstart.com\s*$/.test(value) || /@tempusf.com\s*$/.test(value) || /@tension.com\s*$/.test(value) || /@terasystems.com\s*$/.test(value) || /@tessi.com\s*$/.test(value) || /@timingdesigner.com\s*$/.test(value) || /@tool.co.jp\s*$/.test(value) || /@tracto.da.com\s*$/.test(value) || /@transeda.com\s*$/.test(value) || /@truecircuits.com\s*$/.test(value) || /@trustic.eu\s*$/.test(value) || /@ubitechnology.com\s*$/.test(value) || /@uniquify.com\s*$/.test(value) || /@veriests.com\s*$/.test(value) || /@veriez.com\s*$/.test(value) || /@verific.com\s*$/.test(value) || /@vtech-inc.co.jp\s*$/.test(value) || /@verifore.jp\s*$/.test(value) || /@verilab.com\s*$/.test(value) || /@verisense.com\s*$/.test(value) || /@verisilicon.com\s*$/.test(value) || /@veritools.com\s*$/.test(value) || /@versysdesign.com\s*$/.test(value) || /@videantis.com\s*$/.test(value) || /@videantis.de\s*$/.test(value) || /@vivantecorp.com\s*$/.test(value) || /@voomtown.com\s*$/.test(value) || /@vpiphotonics.com\s*$/.test(value) || /@vworks.com\s*$/.test(value) || /@wavecomp.ai\s*$/.test(value) || /@wssi.com\s*$/.test(value) || /@xjtag.com\s*$/.test(value) || /@xpedion.com\s*$/.test(value) || /@xplm.com\s*$/.test(value) || /@xtreme-eda.com\s*$/.test(value) || /@yxi.com\s*$/.test(value) || /@zeland.com\s*$/.test(value) || /@zenasis.com\s*$/.test(value) || /@zsp.com\s*$/.test(value) || /@zuken.com\s*$/.test(value) || /@incusolution.com\s*$/.test(value) || /@atosolution.com\s*$/.test(value) || /@126.com\s*$/.test(value) || /@163.com\s*$/.test(value) || /@3ds.com\s*$/.test(value) || /@abelite-da.com\s*$/.test(value) || /@adapt-io.com\s*$/.test(value) || /@adelphia.net\s*$/.test(value) || /@adiva.com\s*$/.test(value) || /@advantest-ard.com\s*$/.test(value) || /@air.net\s*$/.test(value) || /@airmail.net\s*$/.test(value) || /@alatek.com\s*$/.test(value) || /@aldec.com\s*$/.test(value) || /@alessandroogheri.com\s*$/.test(value) || /@alibaba.com\s*$/.test(value) || /@aliyun.com\s*$/.test(value) || /@altium.com\s*$/.test(value) || /@altium.com.au\s*$/.test(value) || /@amiq.com\s*$/.test(value) || /@analogbits.com\s*$/.test(value) || /@analogix.com\s*$/.test(value) || /@anasift.com\s*$/.test(value) || /@andestech.com\s*$/.test(value) || /@ankasys.com\s*$/.test(value) || /@ansys.com\s*$/.test(value) || /@aol.com\s*$/.test(value) || /@apsimtech.com\s*$/.test(value) || /@arcadiainnovation.com\s*$/.test(value) || /@archelon.com\s*$/.test(value) || /@arteris.com\s*$/.test(value) || /@ascinc.com\s*$/.test(value) || /@asicdepot.com\s*$/.test(value) || /@asic-world.com\s*$/.test(value) || /@astc-design.com\s*$/.test(value) || /@atlanticbb.net\s*$/.test(value) || /@atoptech.com\s*$/.test(value) || /@att.net\s*$/.test(value) || /@att.yahoo.com\s*$/.test(value) || /@attbi.com\s*$/.test(value) || /@attglobal.net\s*$/.test(value) || /@aumraj.com\s*$/.test(value) || /@aurora.tech\s*$/.test(value) || /@ausdia.com\s*$/.test(value) || /@autodesk.com\s*$/.test(value) || /@autowb.com\s*$/.test(value) || /@avatar-da.com\s*$/.test(value) || /@averant.com\s*$/.test(value) || /@avery-design.com\s*$/.test(value) || /@awaveip.com\s*$/.test(value) || /@axiscorp.com\s*$/.test(value) || /@axisdesign.com\s*$/.test(value) || /@axissystems.com\s*$/.test(value) || /@basicisp.net\s*$/.test(value) || /@bcpl.net\s*$/.test(value) || /@bellatlantic.net\s*$/.test(value) || /@bellnet.ca\s*$/.test(value) || /@bellsouth.net\s*$/.test(value) || /@bestweb.net\s*$/.test(value) || /@bev.net\s*$/.test(value) || /@beyondsemi.com\s*$/.test(value) || /@blacksburg.net\s*$/.test(value) || /@blazenet.net\s*$/.test(value) || /@bluepearlsoftware.com\s*$/.test(value) || /@bluespec.com\s*$/.test(value) || /@brekersystems.com\s*$/.test(value) || /@broadcom.com\s*$/.test(value) || /@cableone.net\s*$/.test(value) || /@cad-design.com\s*$/.test(value) || /@cais.net\s*$/.test(value) || /@cantv.net\s*$/.test(value) || /@capu.net\s*$/.test(value) || /@cast-inc.com\s*$/.test(value) || /@ce.medione.net\s*$/.test(value) || /@central.cox.net\s*$/.test(value) || /@centurylink.com\s*$/.test(value) || /@ceva-dsp.com\s*$/.test(value) || /@cfdrc.com\s*$/.test(value) || /@charm.net\s*$/.test(value) || /@charter.net\s*$/.test(value) || /@chipglobe.com\s*$/.test(value) || /@chipmd.com\s*$/.test(value) || /@codasip.com\s*$/.test(value) || /@comcast.net\s*$/.test(value) || /@compuserve.com\s*$/.test(value) || /@Comsol.com\s*$/.test(value) || /@concentric.net\s*$/.test(value) || /@correctdesigns.com\s*$/.test(value) || /@cortus.com\s*$/.test(value) || /@coseda-tech.com\s*$/.test(value) || /@covad.net\s*$/.test(value) || /@cox.net\s*$/.test(value) || /@coxmail.com\s*$/.test(value) || /@credosemi.com\s*$/.test(value) || /@crosslink.net\s*$/.test(value) || /@csi.com\s*$/.test(value) || /@cst.com\s*$/.test(value) || /@cvcblr.com\s*$/.test(value) || /@cwseda.com\s*$/.test(value) || /@daum.net\s*$/.test(value) || /@dca.net\s*$/.test(value) || /@dcd.pl\s*$/.test(value) || /@defactotech.com\s*$/.test(value) || /@deltanet.com\s*$/.test(value) || /@designw.com\s*$/.test(value) || /@diakopto.com\s*$/.test(value) || /@digitalcircuitdesign.com\s*$/.test(value) || /@direcway.com \s*$/.test(value) || /@dmv.com\s*$/.test(value) || /@dolphin-design.fr\s*$/.test(value) || /@dslextreme.com\s*$/.test(value) || /@dspg.com\s*$/.test(value) || /@dynalith.com\s*$/.test(value) || /@earthlink.net\s*$/.test(value) || /@east.cox.net\s*$/.test(value) || /@easyic.ro\s*$/.test(value) || /@edaptive.com\s*$/.test(value) || /@edge.net\s*$/.test(value) || /@elcamino.de\s*$/.test(value) || /@elgris.com\s*$/.test(value) || /@elsys-eastern.com\s*$/.test(value) || /@email.com\s*$/.test(value) || /@empyrean.com.cn\s*$/.test(value) || /@empyrean-tech.com\s*$/.test(value) || /@emsn.com\s*$/.test(value) || /@enter.net\s*$/.test(value) || /@erols.com\s*$/.test(value) || /@esperanto.ai\s*$/.test(value) || /@etopus.com\s*$/.test(value) || /@eurekatech.com\s*$/.test(value) || /@excellicon.com\s*$/.test(value) || /@excite.com\s*$/.test(value) || /@ezy.net\s*$/.test(value) || /@fastmail.fm\s*$/.test(value) || /@fcc.net\s*$/.test(value) || /@fintronic.com\s*$/.test(value) || /@fishtail-da.com\s*$/.test(value) || /@flashcom.net\s*$/.test(value) || /@forthnet.gr\s*$/.test(value) || /@fract-tech.com\s*$/.test(value) || /@frobas.com\s*$/.test(value) || /@frontier.com\s*$/.test(value) || /@frontline.net\s*$/.test(value) || /@fsresult.com\s*$/.test(value) || /@ftlsystems.com\s*$/.test(value) || /@fullchannel.net\s*$/.test(value) || /@gaisler.com\s*$/.test(value) || /@Gateway.net\s*$/.test(value) || /@gemdt.com\s*$/.test(value) || /@gl.centurytel.net\s*$/.test(value) || /@gl.umbc.edu\s*$/.test(value) || /@gmail.co.in\s*$/.test(value) || /@gmail.com\s*$/.test(value) || /@gmail.hu\s*$/.test(value) || /@gmail.it\s*$/.test(value) || /@gmail.ru\s*$/.test(value) || /@gtei.bellatlantic.net\s*$/.test(value) || /@gti.net\s*$/.test(value) || /@guc-asic.com\s*$/.test(value) || /@gw.dmv.com\s*$/.test(value) || /@hanmail.net\s*$/.test(value) || /@hdl-dh.com\s*$/.test(value) || /@hisilicon.com\s*$/.test(value) || /@hotcom\s*$/.test(value) || /@hotmail.com\s*$/.test(value) || /@huawei.com\s*$/.test(value) || /@hypersilicon.com\s*$/.test(value) || /@ibextech.jp\s*$/.test(value) || /@ibm.net \s*$/.test(value) || /@icloud.com\s*$/.test(value) || /@icmanage.com\s*$/.test(value) || /@idx4.com\s*$/.test(value) || /@iearthlink.net\s*$/.test(value) || /@ihwy.com\s*$/.test(value) || /@ime.cas.cn\s*$/.test(value) || /@imgtec.com\s*$/.test(value) || /@incentia.com\s*$/.test(value) || /@incoresemi.com\s*$/.test(value) || /@infinisim.com\s*$/.test(value) || /@inno-logic.com\s*$/.test(value) || /@innosilicon.com\s*$/.test(value) || /@inphi.com\s*$/.test(value) || /@insighteda.com\s*$/.test(value) || /@integra.net\s*$/.test(value) || /@Integratedsoft.com\s*$/.test(value) || /@intelliprop.com\s*$/.test(value) || /@interaccess.com\s*$/.test(value) || /@internetmci.com\s*$/.test(value) || /@interrasystems.com\s*$/.test(value) || /@intusoft.com\s*$/.test(value) || /@ionet.net\s*$/.test(value) || /@i-plus.net\s*$/.test(value) || /@ip-maker.com\s*$/.test(value) || /@iroctech.com\s*$/.test(value) || /@ismtp.earthlink.net\s*$/.test(value) || /@isp.com\s*$/.test(value) || /@itol.com\s*$/.test(value) || /@ix.netcom.com\s*$/.test(value) || /@javelin-da.com\s*$/.test(value) || /@Jcmwave.com\s*$/.test(value) || /@jedat.co.jp\s*$/.test(value) || /@jtag.com\s*$/.test(value) || /@juno.com\s*$/.test(value) || /@kandou.com\s*$/.test(value) || /@kavcak.com\s*$/.test(value) || /@keysight.com\s*$/.test(value) || /@kulmeo.com\s*$/.test(value) || /@live.com\s*$/.test(value) || /@lorentzsolution.com\s*$/.test(value) || /@lowrisc.org\s*$/.test(value) || /@lucedaphotonics.com\s*$/.test(value) || /@m31tech.com\s*$/.test(value) || /@magillem.com\s*$/.test(value) || /@magma.com\s*$/.test(value) || /@maviss-design.com\s*$/.test(value) || /@mayahtt.com\s*$/.test(value) || /@mchsi.com\s*$/.test(value) || /@mciworldcom.net \s*$/.test(value) || /@mediacomcable.com\s*$/.test(value) || /@medione.net\s*$/.test(value) || /@megapathdsl.net\s*$/.test(value) || /@memscap.com\s*$/.test(value) || /@mentor.com\s*$/.test(value) || /@mentorg.com\s*$/.test(value) || /@mentorgraphics.com\s*$/.test(value) || /@methods2business.com\s*$/.test(value) || /@microeda.com\s*$/.test(value) || /@mindspring.com\s*$/.test(value) || /@mixel.com\s*$/.test(value) || /@morethanip.com\s*$/.test(value) || /@mosys.com\s*$/.test(value) || /@motivo.ai\s*$/.test(value) || /@msn.com\s*$/.test(value) || /@msol.co.jp\s*$/.test(value) || /@mti.com\s*$/.test(value) || /@mw.centurytel.net\s*$/.test(value) || /@mycad.com\s*$/.test(value) || /@nangate.com\s*$/.test(value) || /@nauticom.net\s*$/.test(value) || /@naver.com\s*$/.test(value) || /@netaddress.usa.net\s*$/.test(value) || /@netcom.ca\s*$/.test(value) || /@netcom.com \s*$/.test(value) || /@netscape.com\s*$/.test(value) || /@netzero.net\s*$/.test(value) || /@nimbic.com\s*$/.test(value) || /@njd.xo.com\s*$/.test(value) || /@nobug.ro\s*$/.test(value) || /@nptest.com\s*$/.test(value) || /@nsysinc.com\s*$/.test(value) || /@ntegra.net\s*$/.test(value) || /@ntlab.com\s*$/.test(value) || /@numeritech.com\s*$/.test(value) || /@nw.centurytel.net\s*$/.test(value) || /@nwlogic.com\s*$/.test(value) || /@oasis-ds.com\s*$/.test(value) || /@obsidiansoft.com\s*$/.test(value) || /@oea.com\s*$/.test(value) || /@olg.com\s*$/.test(value) || /@onespin-solutions.com\s*$/.test(value) || /@opshub.com\s*$/.test(value) || /@optem.com\s*$/.test(value) || /@optimalcorp.com\s*$/.test(value) || /@Optiwave.com\s*$/.test(value) || /@optonline.net\s*$/.test(value) || /@oranek.com\s*$/.test(value) || /@oskitechnology.com\s*$/.test(value) || /@outblaze.com\s*$/.test(value) || /@outlook.com\s*$/.test(value) || /@pacbell.net \s*$/.test(value) || /@paradigm-works.com\s*$/.test(value) || /@paragon-ic.com\s*$/.test(value) || /@patmedia.net\s*$/.test(value) || /@peoplepc.com\s*$/.test(value) || /@perceptionsoftware.com\s*$/.test(value) || /@perfectvips.com\s*$/.test(value) || /@pgc.com\s*$/.test(value) || /@pgc.com.tw\s*$/.test(value) || /@phoenixsoftware.com\s*$/.test(value) || /@Photond.com\s*$/.test(value) || /@pipeline.com\s*$/.test(value) || /@pitsim.com\s*$/.test(value) || /@plda.com\s*$/.test(value) || /@prodesigncad.de\s*$/.test(value) || /@prodesign-europe.com\s*$/.test(value) || /@prodigy.net\s*$/.test(value) || /@prolific.com.tw\s*$/.test(value) || /@prolificinc.com\s*$/.test(value) || /@proptd.net\s*$/.test(value) || /@prosilog.com\s*$/.test(value) || /@prover.com\s*$/.test(value) || /@provino-tech.com\s*$/.test(value) ||
+            /@psi.net\s*$/.test(value) || /@ptc.com\s*$/.test(value) || /@ptd.net\s*$/.test(value) || /@pulsic.com\s*$/.test(value) ||
+            /@qdai.com\s*$/.test(value) || /@qis.net\s*$/.test(value) || /@qq.com\s*$/.test(value) || /@qwest.net\s*$/.test(value) ||
+            /@rachip.com\s*$/.test(value) || /@rackspace.com\s*$/.test(value) || /@randomlogiccorp.com\s*$/.test(value) || /@rcn.com\s*$/.test(value) || /@realintent.com\s*$/.test(value) || /@rediffmail.com\s*$/.test(value) || /@relay.psi.net\s*$/.test(value) || /@Remcom.com\s*$/.test(value) || /@remicro.com\s*$/.test(value) || /@reshape.com\s*$/.test(value) || /@roalogic.com\s*$/.test(value) || /@robustchip.com\s*$/.test(value) || /@rogers.com\s*$/.test(value) || /@rr.com\s*$/.test(value) || /@rsvhr.com\s*$/.test(value) || /@runtimeinc.com\s*$/.test(value) || /@rupayamail.com\s*$/.test(value) || /@s2cinc.com\s*$/.test(value) || /@s3group.com\s*$/.test(value) || /@safelogic.se\s*$/.test(value) || /@sagantec.com\s*$/.test(value) || /@sagantec.de\s*$/.test(value) || /@sagantec.nl\s*$/.test(value) || /@sandwork.com\s*$/.test(value) || /@sbcglobal.net\s*$/.test(value) || /@sbcglobal.yahoo.com\s*$/.test(value) || /@scianalog.com\s*$/.test(value) || /@sd.com\s*$/.test(value) || /@semifore.com\s*$/.test(value) || /@semtech.com\s*$/.test(value) || /@sequencedesign.com\s*$/.test(value) || /@sfmtech.com\s*$/.test(value) || /@shearwater.com\s*$/.test(value) || /@sicanvas.com \s*$/.test(value) || /@siemens.com\s*$/.test(value) || /@sierra-da.com\s*$/.test(value) || /@sifive.com\s*$/.test(value) || /@sifr.com\s*$/.test(value) || /@sii.co.jp\s*$/.test(value) || /@silexinsight.com\s*$/.test(value) || /@siliconcanvas.com\s*$/.test(value) || /@siliconcr.com\s*$/.test(value) || /@siliconds.com\s*$/.test(value) || /@silicontechnologiesinc.com\s*$/.test(value) || /@silvaco.com\s*$/.test(value) || /@simantis.com\s*$/.test(value) || /@sisoft.com\s*$/.test(value) || /@sk.sympatico.ca\s*$/.test(value) || /@smarthost.cox.com\s*$/.test(value) || /@snip.net\s*$/.test(value) || /@snowbush.com\s*$/.test(value) || /@so.centurytel.net\s*$/.test(value) || /@softmixedsignal.com\s*$/.test(value) || /@sonicsinc.com\s*$/.test(value) || /@sonnetsoftware.com\s*$/.test(value) || /@sprint.com\s*$/.test(value) || /@sprintmail.com \s*$/.test(value) || /@sprynet.com\s*$/.test(value) || /@starpower.net\s*$/.test(value) || /@stellacorp.co.jp\s*$/.test(value) || /@stonepillar.com\s*$/.test(value) || /@suddenlink.com\s*$/.test(value) || /@surewest.net\s*$/.test(value) || /@swva.net\s*$/.test(value) || /@sycon-design.com\s*$/.test(value) || /@sympatico.ca\s*$/.test(value) || /@synacor.com\s*$/.test(value) || /@syncad.com\s*$/.test(value) || /@synopsys.co.jp\s*$/.test(value) || /@synopsys.com\s*$/.test(value) || /@syntacore.com\s*$/.test(value) || /@syntest.com\s*$/.test(value) || /@syosil.com\s*$/.test(value) || /@takumi-solutions.com\s*$/.test(value) || /@tanner.com\s*$/.test(value) || /@tdasystems.com\s*$/.test(value) || /@tekstart.com\s*$/.test(value) || /@telus.net\s*$/.test(value) || /@tempusf.com\s*$/.test(value) || /@tension.com\s*$/.test(value) || /@terasystems.com\s*$/.test(value) || /@tessi.com\s*$/.test(value) || /@timingdesigner.com\s*$/.test(value) || /@tool.co.jp\s*$/.test(value) || /@toto.net\s*$/.test(value) || /@tracto-da.com \s*$/.test(value) || /@transeda.com\s*$/.test(value) || /@truecircuits.com\s*$/.test(value) || /@trustic.eu\s*$/.test(value) || /@tucows.com\s*$/.test(value) || /@txcorp.com\s*$/.test(value) || /@ubitechnology.com\s*$/.test(value) || /@uniquify.com\s*$/.test(value) || /@usa.net\s*$/.test(value) || /@usit.net\s*$/.test(value) || /@uu.net\s*$/.test(value) || /@veanlo.com\s*$/.test(value) || /@veriests.com\s*$/.test(value) || /@veriez.com\s*$/.test(value) || /@verific.com\s*$/.test(value) || /@verifore.jp\s*$/.test(value) || /@verilab.com\s*$/.test(value) || /@verisense.com\s*$/.test(value) || /@verisilicon.com\s*$/.test(value) || /@veritools.com\s*$/.test(value) || /@verizon.net\s*$/.test(value) || /@versysdesign.com\s*$/.test(value) || /@videantis.com\s*$/.test(value) || /@videantis.de\s*$/.test(value) || /@videotron.ca\s*$/.test(value) || /@vivantecorp.com\s*$/.test(value) || /@voomtown.com\s*$/.test(value) || /@vpiphotonics.com\s*$/.test(value) || /@vtech-inc.co.jp\s*$/.test(value) || /@vworks.com\s*$/.test(value) || /@wavecomp.ai\s*$/.test(value) || /@webstable.com\s*$/.test(value) || /@west.cox.net\s*$/.test(value) || /@wideopenwest.com\s*$/.test(value) || /@windstream.com\s*$/.test(value) || /@wockcy.com\s*$/.test(value) || /@worldnet.att.net \s*$/.test(value) || /@wssi.com\s*$/.test(value) || /@xjtag.com\s*$/.test(value) || /@xo.com\s*$/.test(value) || /@xpedion.com\s*$/.test(value) || /@xplm.com\s*$/.test(value) || /@xtreme-eda.com\s*$/.test(value) || /@yahoo.ca\s*$/.test(value) || /@yahoo.cn\s*$/.test(value) || /@yahoo.co.id\s*$/.test(value) || /@yahoo.co.in\s*$/.test(value) || /@yahoo.co.jp\s*$/.test(value) || /@yahoo.co.kr\s*$/.test(value) || /@yahoo.co.nz\s*$/.test(value) || /@yahoo.co.th\s*$/.test(value) || /@yahoo.co.uk\s*$/.test(value) || /@yahoo.com\s*$/.test(value) || /@yahoo.de\s*$/.test(value) || /@yahoo.dk\s*$/.test(value) || /@yahoo.es\s*$/.test(value) || /@yahoo.fr\s*$/.test(value) || /@yahoo.gr\s*$/.test(value) || /@yahoo.ie\s*$/.test(value) || /@yahoo.in\s*$/.test(value) || /@yahoo.it\s*$/.test(value) || /@yahoo.no\s*$/.test(value) || /@yahoo.pl\s*$/.test(value) || /@yahoo.ro\s*$/.test(value) || /@yahoo.se\s*$/.test(value) || /@yahoogroups.com\s*$/.test(value) || /@ymail.com\s*$/.test(value) || /@yopmail.com\s*$/.test(value) || /@yxi.com\s*$/.test(value) || /@zeland.com\s*$/.test(value) || /@zenasis.com\s*$/.test(value) || /@ziplink.net\s*$/.test(value) || /@zsp.com\s*$/.test(value) || /@zuken.com\s*$/.test(value) || /@empal.com\s*$/.test(value) || /@nate.com\s*$/.test(value) || /@paran.com\s*$/.test(value) || /@hitel.net\s*$/.test(value) || /@ednc.com\s*$/.test(value) || /@sailline.co.kr\s*$/.test(value) || /@asml.com\s*$/.test(value)) {
+            return false;
+        }else{
+            return true;
+        }
+    }, "Invalid email. Email from this domain name is not allowed.");
+
+    jQuery.validator.addMethod("Student", function (value, element) {
+        return this.optional(element) || /^\w+[\w-\.]*\@[students]{8,8}\.[adu]{3,3}\.[ac]{2,2}\.[ae]{2,2}$/.test(value);
+    }, "Please specify the correct domain for your documents");
+
+    jQuery(document).ready(function ($) {
+
+        $(".scroll-to-top").on("click", function () {
+            $('body,html').animate({
+                    scrollTop: 0,
+                }, 2000
+            );
+        });
+
+        if(typeof $.fn.tooltip!="undefined"){
+          $('[data-toggle="tooltip"]').tooltip({html: true});
+        }
+
+        if ($('.cd-top').length > 0) {
+            // browser window scroll (in pixels) after which the "back to top" link is shown
+            var offset = 300,
+                //browser window scroll (in pixels) after which the "back to top" link opacity is reduced
+                offset_opacity = 1200,
+                //duration of the top scrolling animation (in ms)
+                scroll_top_duration = 700,
+                //grab the "back to top" link
+                $back_to_top = $('.cd-top');
+
+            //hide or show the "back to top" link
+            $(window).scroll(function () {
+                ($(this).scrollTop() > offset) ? $back_to_top.addClass('cd-is-visible') : $back_to_top.removeClass('cd-is-visible cd-fade-out');
+                if ($(this).scrollTop() > offset_opacity) {
+                    $back_to_top.addClass('cd-fade-out');
+                }
+            });
+
+            //smooth scroll to top
+            $back_to_top.on('click', function (event) {
+                event.preventDefault();
+                $('body,html').animate({
+                        scrollTop: 0,
+                    }, scroll_top_duration
+                );
+            });
+        }
+    });
+
+    function IsinIframe () {
+        try {
+            return window.self !== window.top;
+        } catch (e) {
+            return true;
+        }
+    }
+    function resizeIframe(obj) {
+        obj.style.height = obj.contentWindow.document.documentElement.scrollHeight + 'px';
+    }
+    function getUrlParameter(name) {
+      name = name.replace(/[\[]/, '\\[').replace(/[\]]/, '\\]');
+      var regex = new RegExp('[\\?&]' + name + '=([^&#]*)');
+      var results = regex.exec(location.search);
+      return results === null ? '' : decodeURIComponent(results[1].replace(/\+/g, ' '));
+    };
+    </script> 
+<script>
+$('#login-footer .col-sm-8').append('<a href="/https://carevalueexpo.vfairs.com/vfair/saml/event/dev/?sso" class="btn btn-darkgrey flt-left" style="border-radius:0">CareValue Agent Login</a>')
+</script><script type="text/javascript">
+$(document).ready(function () {
+    if(CustomGetCookie("ppc")==null){
+        //
+    } else {
+        $("#privacy_sticky").remove();
+    }
+
+    });
+function CustomGetCookie(name) {
+  var v = document.cookie.match('(^|;) ?' + name + '=([^;]*)(;|$)');
+  return v ? v[2] : null;
+}
+function CustomSetCookie(name, value, days) {
+  var d = new Date;
+  d.setTime(d.getTime() + 24*60*60*1000*days);
+  document.cookie = name + "=" + value + ";path=/;expires=" + d.toGMTString();
+}
+
+function cookiePolicyReject() {
+  CustomSetCookie("ppc", "2", 365);
+  $("#privacy_sticky").remove();
+  //$("body").append("");
+}
+</script>
+</body>
+</html>
